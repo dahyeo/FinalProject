@@ -4,5 +4,25 @@
   <insert id="insertMember" parameterType="member">
     insert into member(mem_id,mem_pass,mem_name,mem_email,mem_birth,mem_phone,mem_addr,mem_point) values(#{mem_id},#{mem_pass},#{mem_name},#{mem_email},#{mem_birth},#{mem_phone},#{mem_addr},5000)
   </insert>
-  
+  <select id="getSearchId" resultType="int" parameterType="String">
+    select count(*) from member where mem_id=#{mem_id}
+  </select>
+  <select id="getName" resultType="String" parameterType="String">
+    select mem_name from member where mem_id=#{mem_id}
+  </select>
+  <select id="getIdPassCheck" resultType="int" parameterType="HashMap">
+    select count(*) from member where mem_id=#{mem_id} and mem_pass=#{mem_pass}
+  </select>
+  <select id="getDataById" resultType="member" parameterType="String">
+    select * from member where mem_id=#{mem_id}
+  </select>
+  <delete id="deleteMember" parameterType="String">
+    delete from member where mem_num=#{mem_num}
+  </delete>
+  <select id="getDataByNum" resultType="member" parameterType="String">
+    select * from member where mem_num=#{mem_num}
+  </select>
+  <update id="updateMember" parameterType="member">
+    update member set mem_pass=#{mem_pass},mem_name=#{mem_name},mem_email=#{mem_email},mem_phone=#{mem_phone},mem_addr=#{mem_addr} where mem_num=#{mem_num}
+  </update>
 </mapper>

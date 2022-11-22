@@ -7,34 +7,65 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gamja+Flower&family=Jua&family=Noto+Serif+KR&display=swap">
+
+<!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="https://kit.fontawesome.com/4f8084f592.js" crossorigin="anonymous"></script>
+
+<!-- Scripts -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+
 <title>Insert title here</title>
 <style type="text/css">
+* { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
 
 div.layout div{
-  border: 1px solid gray;
+  border: 0px solid gray;
 }
 
 div.layout div.title{
   position: absolute;
-  height: 100px;
+  width: 100%;
+  height: 50px;
 }
 
 div.layout div.menu{
   position: absolute;
-  top: 100px;
+  top: 50px;
   width: 100%;
-  height: 100px;
+  height: 50px;
 }
 
 div.layout div.main{
   position: absolute;
-  top: 200px;
+  top: 100px;
   width: 100%;
   height: 100%;
 }
@@ -43,13 +74,13 @@ div.layout div.main{
 <body>
 <div class="layout">
   <div class="title">
-    <tiles:insertAttribute name="title"/> <!-- tiles.xml의 name과 동일하게 -->
+    <tiles:insertAttribute name="title"/> 
   </div>
   <div class="menu">
-    <tiles:insertAttribute name="menu"/> <!-- tiles.xml의 name과 동일하게 -->
+    <tiles:insertAttribute name="menu"/> 
   </div>
   <div class="main">
-    <tiles:insertAttribute name="main"/> <!-- tiles.xml의 name과 동일하게 -->
+    <tiles:insertAttribute name="main"/> 
   </div>
 </div>
 </body>

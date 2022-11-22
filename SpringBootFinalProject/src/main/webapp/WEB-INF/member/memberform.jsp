@@ -62,6 +62,7 @@
     <tr>
       <td>
         <button type="submit">전송</button>
+        <button>목록</button>
       </td>
     </tr>
   </table>
