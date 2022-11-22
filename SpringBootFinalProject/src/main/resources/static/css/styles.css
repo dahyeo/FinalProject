@@ -360,6 +360,7 @@ select {
 	font-size: 0.875rem;
 	line-height: 0.875rem;
 	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.05);
+<<<<<<< HEAD
 }
 
 .navbar .navbar-brand {
@@ -370,6 +371,21 @@ select {
 .navbar .logo-image img {
     width: 133px;
 	height: 30px;
+=======
+	height: 60px;
+}
+
+.navbar .navbar-brand {
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+}
+
+.navbar .logo-image img {
+    width: 100px;
+	height: 30px;
+	left: 300px;
+    top: 15px;
+>>>>>>> branch 'main' of https://github.com/dahyeo/FinalProject.git
 }
 
 .navbar .logo-text {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.data.mapper.TrainerServiceMapperInter">
+
+   <insert id="insertTrainer" parameterType="trainer">
+      insert into trainer (trainer_name,trainer_gender,trainer_birth,trainer_phone,trainer_addr,trainer_smoking,
+      trainer_photo,trainer_date,trainer_loc,trainer_certificate,trainer_career,trainer_content) 
+      values(#{trainer_name},#{trainer_gender},#{trainer_birth},#{trainer_phone},#{trainer_addr},#{trainer_smoking},
+      #{trainer_photo},#{trainer_date},#{trainer_loc},#{trainer_certificate},#{trainer_career},#{trainer_content})
+   </insert>
+  
+   <select id="TrainerList" resultType="trainer">
+      select * from trainer 
+   </select>
+</mapper>

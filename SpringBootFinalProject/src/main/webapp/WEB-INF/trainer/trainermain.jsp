@@ -13,11 +13,45 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="https://kit.fontawesome.com/4f8084f592.js" crossorigin="anonymous"></script>
 <title>Insert title here</title>
+<style type="text/css">
+body {
+  padding: 0px;
+  margin: 0px;
+}
+.bg {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  margin: 0px auto;
+  position: relative;
+}
+video {
+  width: 100%;
+}
+.text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.text p {
+  padding-left: 200px;
+  text-align: left;
+  font-size: 60px;
+  font-weight: bold;
+  color: #ffffff;
+}
+</style>
 </head>
 <body>
-<script type="text/javascript">
-  alert("회원가입 되셨습니다.");
-  location.replace("/");
-</script>
+<div class="bg">
+  <video muted autoplay loop>
+    <source src="${root }/video/trainervideo.mp4" type="video/mp4">
+  </video>
+  <div class="text">
+    <p>훈련사의<br><br><br>체계적 교육!</p>
+  </div>
+</div>
 </body>
 </html>
