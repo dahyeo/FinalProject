@@ -60,11 +60,11 @@ div.layout div.menu{
   position: absolute;
   top: 50px;
   width: 100%;
-<<<<<<< HEAD
+
   height: 50px;
-=======
+
   height: 50px; 
->>>>>>> branch 'main' of https://github.com/dahyeo/FinalProject.git
+
 }
 
 div.layout div.main{
@@ -81,13 +81,12 @@ div.layout div.main{
     <tiles:insertAttribute name="title"/> 
   </div>
   <div class="menu">
-<<<<<<< HEAD
+
     <tiles:insertAttribute name="menu"/> 
-  </div>
-=======
+
     <tiles:insertAttribute name="menu"/>  
   </div> 
->>>>>>> branch 'main' of https://github.com/dahyeo/FinalProject.git
+
   <div class="main">
     <tiles:insertAttribute name="main"/> 
   </div>

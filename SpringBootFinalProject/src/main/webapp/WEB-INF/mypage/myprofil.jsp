@@ -13,12 +13,18 @@
 .btn{
 	border: 1px solid black;
 }
+div{
+	width: 1000px;
+	margin-left: 300px;
+}
 </style>
 </head>
 <body>
 
 <div>
-	<h2><b>${mem_name }님, 안녕하세요!</b></h2>
+	${mem_id }
+	${sessionScope.id}
+	<h2><b>11${mem_name }님, 안녕하세요!</b></h2>
 	<br>
 	<b>이메일 아이디</b><br>
 	<b>${mem_email } </b>
