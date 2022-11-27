@@ -25,7 +25,7 @@ div{
 </head>
 <body>
 <div align="center">
-	<button onclick="location.href='myprofil?id=${sessionScope.myid}'">내 프로필</button>
+	<button onclick="location.href='myprofil?mem_id=${sessionScope.myid }'">내 프로필</button>
 	<button onclick="location.href='petprofil'">반려동물 프로필</button>
 </div>
 
