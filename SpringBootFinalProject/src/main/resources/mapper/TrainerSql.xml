@@ -61,6 +61,6 @@
   </select>
   <!-- getTrainerNum -->
    <select id="getTrainerNumByName" resultType="String" parameterType="String">
-  	select trainer_num from trainer where trainer_name=#{trainer_num}
+  	select trainer_num from trainer where trainer_name=#{trainer_name}
   </select>
 </mapper>
