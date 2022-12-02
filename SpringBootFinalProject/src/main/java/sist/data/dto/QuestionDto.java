@@ -1,6 +1,7 @@
 package sist.data.dto;
 
-import java.security.Timestamp;
+
+import java.sql.Timestamp;
 
 import org.apache.ibatis.type.Alias;
 
@@ -16,5 +17,7 @@ public class QuestionDto {
 	private String que_content;
 	private Timestamp que_date;
 	
+	//답변갯수 
+	private int acount;
 
 }

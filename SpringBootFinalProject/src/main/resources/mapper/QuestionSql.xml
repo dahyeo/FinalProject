@@ -18,7 +18,7 @@
 		</if>
 	</select>
 	
-	<!-- 목록 출력 (아직 페이징 처리 안함)-->
+	<!-- 전체목록 출력 (아직 페이징 처리 안함)-->
 	<select id="getListOfQuestion" parameterType="Map" resultType="question">
 		select * from question
 		<if test="searchcolumn!=null and searchword!=null">

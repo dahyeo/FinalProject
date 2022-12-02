@@ -65,16 +65,13 @@ input:focus{
 		history.back();
 		</script>
 	</c:if>
-	<div style="width:100%; margin-left:28%; margin-top: 5%;">
+	<div style="width:100%; margin-left:28%; margin-top: 7%;">
 	<form action="qinsert" method="get">
+	<h1>질문 작성하기</h1>
 		<table style="width:700px;">
 		<tr>
 			<td>
-			<input type="hidden" name="mem_name" value="${sessionScope.loginname }">
-			<select class="ani">
-					<option>나의 반려동물</option>
-			</select><br>
-			
+			<input type="hidden" name="mem_name" value="${sessionScope.loginname}">
 				<select name="que_category" required="required" class="cate" >
 					<option value="배변">배변</option>
 					<option value="산책">산책</option>

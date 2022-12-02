@@ -102,6 +102,7 @@ ul.q_category li
 	margin-right: 40px;
 	cursor: pointer;
 }
+
 </style>
 
 <title>Insert title here</title>
@@ -156,15 +157,29 @@ ul.q_category li
 	<div style="width:85%; margin-top:12%; ">
 	<p style="color:gray;">전체 글 ${count }개 &nbsp;&nbsp;&nbsp;
 		<button type="button" class="btn btn-light" onclick="location.href='form'">
-		<i class="bi bi-pencil-square"></i>질문하기</button></p>
+		<i class="bi bi-pencil-square"></i> 질문하기</button></p>
 		<c:forEach var="dto" items="${list}">
-		<div id="qlist" onclick="location.href='qna/que_detail?que_num=${dto.que_num}'">
-			<img src="../image/question.png" alt="질문" style="width: 36px; height: 26px; margin-right: 13px;">
-			<b style="font-size: 20px; font-weight: 500;">${dto.que_subject }</b><br><br>
-			${dto.que_date}
-			<hr><br>
-			${dto.que_content}
+		<div id="qlist" onclick="location.href='que_detail?que_num=${dto.que_num}'">
+			<div style="display:flex;flex-direction:column;cursor:pointer;padding:15px;">
+			<img src="${root }/image/question.png" style="width: 36px; height: 26px; margin-right: 13px; ">
+			<p style="font-weight:600; font-size:20px;letter-spacing:-0.2px;color:#393C47; margin-left:45px; margin-top: -24px;">
+			${dto.que_subject }</p>
+			<hr>
+			</div>
+			<p style="height:115px;font-size:17px;color:#333333;line-height:28px;overflow:hidden;
+			 padding: 0 15px 14px 15px; ">${dto.que_content}</p>
+			
+			<div style="width:469px;padding:32px 38px 32px 32px; background-color:#FAFAFC; margin-left: -30px; border-bottom-left-radius:7px;border-bottom-right-radius:7px; 
+			font-weight: 600; color: #393C47; margin-top: 30px;">
+			<c:if test="${dto.acount==0 }">
+			<img src="${root }/image/w2.jpeg" style=“width:24px;height:24px;border-radius:12px;margin-left:10px;margin-right:10px;” >
+			<span>답변 대기중</span></c:if>
+			<c:if test="${dto.acount>0 }">
+			<img src="${root }/image/w1.png" style=“width:24px;height:24px;border-radius:12px;margin-left:10px;margin-right:10px;” >
+			<span >훈련사 답변 완료 </span> </c:if>
+			</div>
 		</div>
+		
 		</c:forEach>
 			
 	</div>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.data.mapper.AnswerMapperInter">
+	<!-- 답변 등록 -->
+	<insert id="insertAnswer" parameterType="answer" >
+		insert into answer(que_num,trainer_num,trainer_name,ans_content,ans_date) values(#{que_num},#{trainer_num},#{trainer_name},#{ans_content},now())
+	</insert>
+	<!-- 답변목록 -->
+	<select id="getAllAnswer" resultType="answer" parameterType="int">
+		select * from answer where que_num=#{que_num} 
+	</select>
+	<select id="getTrainer" resultType="answer" parameterType="int">
+		select trainer_name from answer where que_num=#{que_num}
+	</select>
+	<!-- 답변갯수 -->
+	<select id="getCountOfAnswer" resultType="int" parameterType="int">
+		select count(*) from answer where que_num=#{que_num}
+	</select>
+	<!-- num에 따른 dto 반환 -->
+	<select id="getAnswerByQueNum" parameterType="int" resultType="answer">
+		select * from answer where que_num=#{que_num}
+	</select>
+</mapper>

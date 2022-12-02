@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import sist.data.dto.AnswerDto;
 import sist.data.dto.QuestionDto;
+import sist.data.service.AnswerService;
 import sist.data.service.QuestionService;
 
 @Controller
@@ -18,6 +20,8 @@ public class QuestionController {
 	@Autowired 
 	QuestionService service;
 	
+	@Autowired
+	AnswerService aservice;
 	
 	//훈련사 Q&A 메인 + 리스트(현재 페이징처리X)
 	@GetMapping("/trainer/qna")
@@ -27,8 +31,16 @@ public class QuestionController {
 		//글 갯수
 		int count = service.getCountOfQuestion(sc, sw);
 		
+		
 		//리스트 
 		List<QuestionDto> list = service.getListOfQuestion(sc, sw);
+	
+		
+		//각 리스트에 따른 답변
+		for(QuestionDto q :list)
+		{
+			q.setAcount(aservice.getAllAnswer(q.getQue_num()).size());
+		}
 		
 		ModelAndView mv = new ModelAndView();
 		
@@ -44,7 +56,7 @@ public class QuestionController {
 	//질문폼 포워드 
 	@GetMapping("/trainer/form")
 	public String form()
-	{
+	{	
 		return "/question/questionform";
 	}
 	
@@ -64,16 +76,22 @@ public class QuestionController {
 	}
 	
 	//디테일페이지 포워드 
-	@GetMapping("/trainer/qna/que_detail")
+	@GetMapping("/trainer/que_detail")
 	public String detail(@RequestParam int que_num, Model model)
 	{
+		
 		QuestionDto dto = service.getDataOfQuestionByNum(que_num);
+		AnswerDto adto =  aservice.getAnswerByQueNum(que_num);
+		int ans_count = aservice.getCountOfAnswer(que_num);
+		
 		model.addAttribute("dto", dto);
+		model.addAttribute("adto", adto);
+		model.addAttribute("ans_count", ans_count);
 		
 		return "/question/questiondetail";
 	}
 	
-	@GetMapping("/trainer/qna/delete")
+	@GetMapping("/trainer/delete")
 	public String delete(@RequestParam int que_num)
 	{
 		service.deleteQuestion(que_num);
