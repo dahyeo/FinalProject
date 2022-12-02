@@ -129,14 +129,16 @@ div.jiwon{
 <div class="box1">
 	<fieldset>
 	<legend style="font-size: 30px;">개인 정보</legend><br><br>
+	
+	<input type="hidden" name="mem_id" value="${sessionScope.myid }">
 		
 		<label for="name"><b style="font-size: 20px;">이름</b> &nbsp;<span style="color: red; font-size: 25px;">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			 &emsp;&emsp;&emsp;&emsp;&emsp;
+			 &emsp;&emsp;&emsp;&emsp;
 			 <input type="text"  name="trainer_name" placeholder="이름" class="form-control" required="required"><br>
 				
 		<label for="mail"><b style="font-size: 20px;">생년월일</b> &nbsp;<span style="color: red; font-size: 25px;">*</span></label>&nbsp;&nbsp;
 			 &emsp;&emsp;&emsp;&nbsp;
-			 <input type="text" name="trainer_birth" placeholder="예)19940101" class="form-control" required="required">&emsp;<span style="color: gray; font-size: 13px; font-style: italic;">03년생부터(만 18세이상) 지원이 가능합니다.</span><br><br>
+			 <input type="text" name="trainer_birth" placeholder="예)1994-01-01" class="form-control" required="required">&emsp;<span style="color: gray; font-size: 13px; font-style: italic;">03년생부터(만 18세이상) 지원이 가능합니다.</span><br><br>
 					
 					
         <label class="test_obj"><b style="font-size: 20px;">성별</b> &nbsp;<span style="color: red; font-size: 25px;">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -150,6 +152,11 @@ div.jiwon{
               <input type="radio" name="trainer_gender" value="여성" required="required">
               <span>여성</span> 
 	    </label> <br><br>
+	    
+	    <label for="name"><b style="font-size: 20px;">이메일</b> &nbsp;<span style="color: red; font-size: 25px;">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 &emsp;&emsp;&emsp;
+			 <input type="text"  name="trainer_email" placeholder="이메일" class="form-control" required="required"><br>
+			 
 	    
 	    <label for="name"><b style="font-size: 20px;">연락처</b> &nbsp;<span style="color: red; font-size: 25px;">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;
 			&emsp;&emsp;&emsp;&emsp; 
@@ -172,7 +179,7 @@ div.jiwon{
 	    </label> <br><br><br>		
 	    		
 	    <label for="name"><b style="font-size: 20px;">사진</b> &nbsp;<span style="color: red; font-size: 25px;">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&emsp;&emsp;&emsp;&emsp; <input type="file" name="upload" required="required"><br>
+			&emsp;&emsp;&emsp;&emsp; <input type="file" name="upload" ><br>
 		</fieldset>		
 
  </div>   
@@ -203,7 +210,7 @@ div.jiwon{
 			 <input type="checkbox" name="trainer_loc"  value="경기 지역">&emsp;경기 지역&emsp;
 			 <input type="checkbox" name="trainer_loc" value="인천 지역">&emsp;인천 지역&emsp;
 			 <input type="checkbox" name="trainer_loc" value="수도권외 지역" >&emsp;수도권외 지역<br><br>
-			 <textarea style="width: 700px;" placeholder="이곳에 직접 입력해주세요" name="trainer_loc"></textarea>
+			 <textarea style="width: 700px;" placeholder="이곳에 직접 입력해주세요" name="trainer_loc" class="form-control"></textarea>
 	    		
 		</fieldset>		
 
@@ -248,7 +255,8 @@ div.jiwon{
        
 </div> 
 
-<button type="submit" class="btn btn-primary" style="margin-left: 700px; width: 300px; height: 80px; font-size: 25px;">지원서 제출</button>
+<button type="submit" class="btn btn-primary" style="margin-left: 700px; width: 300px; height: 80px; font-size: 25px;"
+onclick="btn()">지원서 제출</button>
 
 </form>
 
@@ -257,7 +265,7 @@ div.jiwon{
 <br>
 <script type="text/javascript">
 
-function clickEvent(){
+function btn(){
 	alert('신청이 완료되었습니다');
 }
 </script>

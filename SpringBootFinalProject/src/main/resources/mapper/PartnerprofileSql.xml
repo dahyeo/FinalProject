@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.data.mapper.PartnerprofileMapperInter">
+
+    <insert id="insertPartnerProf" parameterType="partnerprofile">
+    
+      insert into partnerprofile (partner_num,partner_name,partner_gender,partner_date,partner_time,partner_exp,partnerprof_subject,partnerprof_star,partnerprof_price)
+      values(#{partner_num},#{partner_name},#{partner_gender},#{partner_date},#{partner_time},#{partner_exp},#{partnerprof_subject},#{partnerprof_star},#{partnerprof_price})
+
+    </insert>
+
+  
+   <select id="getData" parameterType="String" resultType="partnerprofile">
+           select * from partnerprofile where partnerprof_num=#{partnerprof_num}
+      </select>
+
+
+<select id="getAllList" resultType="partnerprofile">
+select * from partnerprofile 
+
+</select>
+
+<select id="getSList" resultType="partnerprofile" parameterType="String">
+select * from partnerprofile where partnerprof_num=#{partnerprof_num}
+
+</select>
+</mapper> 

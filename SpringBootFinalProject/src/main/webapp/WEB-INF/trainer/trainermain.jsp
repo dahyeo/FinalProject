@@ -42,6 +42,25 @@ video {
   font-weight: bold;
   color: #ffffff;
 }
+.resbtn{
+  display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 70px;
+    margin-top: 60px;
+    margin-left: 220px;
+    border-radius: 5px;
+    background: #6A92FE;
+}
+.restext{
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  font-size: 21px;
+  line-height: 48px;
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -51,6 +70,11 @@ video {
   </video>
   <div class="text">
     <p>훈련사의<br><br><br>체계적 교육!</p>
+    
+    <div class="resbtn">
+      <span class="restext" onclick="location.href='trainer/resform'">예약하기</span>
+    </div>
+    
   </div>
 </div>
 </body>

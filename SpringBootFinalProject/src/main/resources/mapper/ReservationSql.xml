@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.data.mapper.ReservationMapperInter">
+  <insert id="insertReservation" parameterType="reservation">
+    insert into reservation(mem_num,trainerprof_num,partnerprof_num,ani_num,res_visit,res_norm_date,res_rout_date,res_rout_start,res_time,res_pub_pass,res_priv_pass,res_key_loc,res_contact_method) 
+    values(#{mem_num},#{trainerprof_num},#{partnerprof_num},#{ani_num},#{res_visit},#{res_norm_date},#{res_rout_date},#{res_rout_start},#{res_time},#{res_pub_pass},#{res_priv_pass},#{res_key_loc},#{res_contact_method})
+  </insert>
+  <select id="getData" resultType="reservation" parameterType="String">
+    select * from reservation where res_num=#{res_num}
+  </select>
+  <delete id="deleteReservation" parameterType="String">
+    delete from reservation where res_num=#{res_num}
+  </delete>
+  <update id="updateReservation" parameterType="reservation">
+    update reservation set trainerprof_num=#{trainerprof_num},partnerprof_num=#{partnerprof_num},ani_num=#{ani_num},res_visit=#{res_visit},res_animal=#{res_animal},res_match=#{res_match},res_norm_date=#{res_norm_date},res_rout_date=#{res_rout_date},res_rout_start=#{res_rout_start},res_time=#{res_time},res_pub_pass=#{res_pub_pass},res_priv_pass=#{res_priv_pass},res_key_loc=#{res_key_loc},res_contact_method=#{res_contact_method} where res_num=#{res_num}
+  </update>
+  <select id="getDataByMNum" resultType="reservation" parameterType="String">
+    select * from reservation where mem_num=#{mem_num}
+  </select>
+  <select id="getAllDatas" resultType="reservation" parameterType="String">
+    select * from reservation where mem_num=#{mem_num}
+  </select>
+</mapper>

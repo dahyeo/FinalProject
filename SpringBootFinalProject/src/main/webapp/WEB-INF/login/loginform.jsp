@@ -18,7 +18,7 @@
   position:relative;
   margin: 10px auto;
   width: 500px;
-  height: 700px;
+  height: 380px;
   background-color: #fff;
   padding: 10px;
   border-radius: 3px;
@@ -229,6 +229,9 @@ function check(){
       <a href="#" class="active" id="login-box-link">Login</a>
       <a href="#" id="signup-box-link">Sign Up</a>
     </div>
+    
+    <form action="loginprocess" method="post" class="email-login">
+    
     <div class="social-login">
       <a href="#">
         <i class="fa fa-facebook fa-lg"></i>
@@ -240,7 +243,6 @@ function check(){
       </a> 
     </div>
     
-    <form action="loginprocess" method="post" class="email-login">
       <div class="u-form-group">
         <input type="text" name="mem_id" placeholder="ID" autofocus="autofocus" required="required" 
         value="${sessionScope.saveok==null?"":sessionScope.myid }">
@@ -250,7 +252,7 @@ function check(){
       </div>
       <div class="u-form-group">
         <input type="checkbox" name="cbsave"
-            ${sessionScope.saveok==null?"":"checked"}> Keep Login
+            ${sessionScope.saveok==null?"":"checked"}> Save ID
       </div>
       <div class="u-form-group">
         <button type="submit">Log in</button>
@@ -260,7 +262,18 @@ function check(){
       </div>
     </form>
     
-    <form action="../member/insert" method="post" onsubmit="return check()" class="email-signup">
+    <form class="email-signup">
+      <div class="social-login">
+      <a href="../member/normal">
+        일반회원
+      </a>
+      <a href="../member/partner">
+        파트너회원<br>(훈련사,펫시터)
+      </a> 
+    </div>
+    </form>
+    
+    <!-- <form action="insert" method="post" onsubmit="return check()" class="email-signup">
       <div class="u-form-group">
         <input type="text" placeholder="ID" id="id" name="mem_id" required="required"/>
       </div>
@@ -295,7 +308,7 @@ function check(){
       <div class="u-form-group">
         <button type="submit">Sign Up</button>
       </div>
-    </form>
+    </form> -->
   </div>       
 
 

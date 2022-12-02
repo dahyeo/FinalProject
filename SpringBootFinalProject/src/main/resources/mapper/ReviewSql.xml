@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.data.mapper.ReviewMapperInter">
+  <insert id="insertReview" parameterType="review">
+    insert into review(res_num,trainerprof_num,partnerprof_num,mem_num,ani_type,rev_content,rev_photo,rev_star,rev_tag,rev_date,trainer_num,partner_num)
+     values(#{res_num},#{trainerprof_num},#{partnerprof_num},#{mem_num},#{ani_type},#{rev_content},#{rev_photo},#{rev_star},#{rev_tag},now(),#{trainer_num},#{partner_num})
+  </insert>
+	<select id="ReviewList" resultType="review">
+	select * from review 
+	</select>
+	<select id="getData" resultType="review" parameterType="String">
+    select * from review where rev_num=#{rev_num}
+  </select>
+</mapper>

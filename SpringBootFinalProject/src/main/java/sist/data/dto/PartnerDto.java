@@ -9,8 +9,10 @@ import lombok.Data;
 public class PartnerDto {
 
 	private String partner_num;
+	private String mem_num;
 	private String partner_name;
 	private String partner_gender;
+	private String partner_email;
 	private String partner_birth;
 	private String partner_phone;
 	private String partner_addr;

@@ -23,10 +23,11 @@
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/css/swiper.css" rel="stylesheet">
+	<link href="/css/styles.css" rel="stylesheet">
+	<link href="/css/container.css" rel="stylesheet">
 
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -36,11 +37,11 @@
 <script src="https://kit.fontawesome.com/4f8084f592.js" crossorigin="anonymous"></script>
 
 <!-- Scripts -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
-    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="/js/scripts.js"></script> <!-- Custom scripts -->
 
 <title>Insert title here</title>
 <style type="text/css">

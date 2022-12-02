@@ -10,6 +10,19 @@ spring:
   devtools:
     livereload:
       enabled: true
+#e-mail      
+  mail:
+    host: smtp.naver.com
+    port: 465
+    username: dahyeondeveloper@naver.com
+    password: backenddh0530
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+            trust: smtp.naver.com
 #mysql
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -3,13 +3,65 @@
 <mapper namespace="sist.data.mapper.TrainerServiceMapperInter">
 
    <insert id="insertTrainer" parameterType="trainer">
-      insert into trainer (trainer_name,trainer_gender,trainer_birth,trainer_phone,trainer_addr,trainer_smoking,
+      insert into trainer (mem_num,trainer_name,trainer_gender,trainer_email,trainer_birth,trainer_phone,trainer_addr,trainer_smoking,
       trainer_photo,trainer_date,trainer_loc,trainer_certificate,trainer_career,trainer_content) 
-      values(#{trainer_name},#{trainer_gender},#{trainer_birth},#{trainer_phone},#{trainer_addr},#{trainer_smoking},
+      values(#{mem_num},#{trainer_name},#{trainer_gender},#{trainer_email},#{trainer_birth},#{trainer_phone},#{trainer_addr},#{trainer_smoking},
       #{trainer_photo},#{trainer_date},#{trainer_loc},#{trainer_certificate},#{trainer_career},#{trainer_content})
    </insert>
   
-   <select id="TrainerList" resultType="trainer">
-      select * from trainer 
+   <select id="TrainerList" resultType="trainer" parameterType="String">
+      select * from trainer where trainer_num=#{trainer_num}
    </select>
+   
+   <select id="TrainerMuList" resultType="trainer">
+      select * from trainer
+   </select>
+   
+   <select id="getData" parameterType="String" resultType="trainer">
+      select * from trainer where trainer_num=#{trainer_num}
+   </select>
+   
+   <!--?  -->
+   <select id="getMemNum" resultType="String" parameterType="String">
+     select mem_num from trainer where trainer_num=#{trainer_num}
+   </select>
+   
+   <!--트레이너 memnum  -->
+   <select id="getMNum" resultType="String" parameterType="String">
+     select trainer_num from trainer where mem_num=#{mem_num}
+   </select>
+   
+    <select id="getName" resultType="String" parameterType="String">
+     select trainer_name from trainer where mem_num=#{mem_num}
+   </select>
+   
+    <select id="getCareer" resultType="String" parameterType="String">
+     select trainer_career from trainer where mem_num=#{mem_num}
+   </select>
+   
+    <select id="getLoc" resultType="String" parameterType="String">
+     select trainer_loc from trainer where mem_num=#{mem_num}
+   </select>
+   
+    <select id="getContent" resultType="String" parameterType="String">
+     select trainer_content from trainer where mem_num=#{mem_num}
+   </select>
+   
+    <select id="getDate" resultType="String" parameterType="String">
+     select trainer_date from trainer where mem_num=#{mem_num}
+   </select>
+   
+    <select id="getPhoto" resultType="String" parameterType="String">
+     select trainer_photo from trainer where mem_num=#{mem_num}
+   </select>
+   
+     <!-- getDataByMNum -->
+  <select id="getDataByMNum" resultType="trainer" parameterType="String">
+    select * from trainer where mem_num=#{mem_num}
+  </select>
+  
+  	<!-- getNumByTname -->
+  	<select id="getNumByTname" resultType="String" parameterType="String">
+  	select trainer_num from trainer where trainer_name=#{trainer_name}
+  	</select>
 </mapper>

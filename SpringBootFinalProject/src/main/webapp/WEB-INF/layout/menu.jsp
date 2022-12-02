@@ -53,9 +53,17 @@
 </c:if> 
 
 <c:if test="${sessionScope.loginok!=null }">
-  <span onclick="location.href='${root}/mypage/home'" class="mypage">
+  <c:if test="${sessionScope.myid!='admin' }">
+  <span onclick="location.href='${root}/mypage'" class="mypage">
     <i class="fa fa-user" aria-hidden="true"></i>
   </span>
+  </c:if>
+  
+  <c:if test="${sessionScope.myid=='admin' }">
+  <span onclick="location.href='${root}/member/applylist'" class="mypage">
+    <i class="fa fa-users" aria-hidden="true"></i>
+  </span>
+  </c:if>
 </c:if>
 </body>
 </html>

@@ -17,7 +17,7 @@ public class LoginController {
 
 	@Autowired
 	MemberService service;
-	
+		
 	@GetMapping("/login/main")
 	public String form(HttpSession session,Model model) {
 		
@@ -43,7 +43,8 @@ public class LoginController {
 	public String loginProc(@RequestParam String mem_id,
 			@RequestParam String mem_pass,
 			@RequestParam(required = false) String cbsave,
-			HttpSession session) {
+			HttpSession session,
+			Model model) {
 		
 		int check=service.getIdPassCheck(mem_id, mem_pass);
 		
@@ -56,10 +57,12 @@ public class LoginController {
 			session.setAttribute("loginok", "yes");
 			session.setAttribute("saveok", cbsave);
 			session.setAttribute("loginname", dto.getMem_name());
+			session.setAttribute("status", dto.getStatus());
+						
+		    return "redirect:main";
 			
-			return "redirect:main";
 		}else {
-			return "/member/passfail";
+			return "/login/passfail";
 		}			
 	}
 	
@@ -69,4 +72,6 @@ public class LoginController {
 		session.removeAttribute("loginok");
 		return "redirect:/";
 	}
+	
+	
 }

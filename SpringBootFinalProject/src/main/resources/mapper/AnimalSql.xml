@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.data.mapper.AnimalMapperInter">
+  <insert id="insertAnimal" parameterType="animal">
+    insert into animal(mem_num,ani_photo,ani_name,ani_gender,ani_type) values(#{mem_num},#{ani_photo},#{ani_name},#{ani_gender},#{ani_type})
+  </insert>
+  <select id="getDataByMemNum" resultType="animal" parameterType="String">
+    select * from animal where mem_num=#{mem_num}
+  </select>
+</mapper>

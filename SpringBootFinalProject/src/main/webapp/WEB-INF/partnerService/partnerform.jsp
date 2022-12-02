@@ -7,7 +7,8 @@
 <head>
 <meta charset="utf-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
 <title>Insert title here</title>
 <style type="text/css">
@@ -109,7 +110,12 @@ div.jiwon{
 }
 
 </style>
-
+ <script>
+function btn(){
+	alert("신청이 완료되었습니다");
+	
+}
+</script>
 </head>
 <body>
 <form action="insert" method="post" enctype="multipart/form-data">
@@ -124,26 +130,32 @@ div.jiwon{
 	<fieldset>
 	<legend style="font-size: 30px;">개인 정보</legend><br><br>
 		
+		<input type="hidden" name="mem_id" value="${sessionScope.myid }">
+		
 		<label for="name"><b style="font-size: 20px;">이름</b> &nbsp;<span style="color: red; font-size: 25px;">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			 &emsp;&emsp;&emsp;&emsp;&emsp;
 			 <input type="text"  name="partner_name" placeholder="이름" class="form-control" required="required"></label><br>
 				
 		<label for="mail"><b style="font-size: 20px;">생년월일</b> &nbsp;<span style="color: red; font-size: 25px;">*</span></label>&nbsp;&nbsp;
 			 &emsp;&emsp;&emsp;&emsp;
-			 <input type="text" name="partner_birth" placeholder="예)19940101" class="form-control" required="required">&emsp;<span style="color: gray; font-size: 13px; font-style: italic;">03년생부터(만 18세이상) 지원이 가능합니다.</span><br><br>
+			 <input type="text" name="partner_birth" placeholder="예)1994-01-01" class="form-control" required="required">&emsp;<span style="color: gray; font-size: 13px; font-style: italic;">03년생부터(만 18세이상) 지원이 가능합니다.</span><br><br>
 					
 					
         <label class="test_obj"><b style="font-size: 20px;">성별</b> &nbsp;<span style="color: red; font-size: 25px;">*</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              &emsp;&emsp;&emsp;&emsp;&emsp; 
              <input type="radio" name="partner_gender" value="남성" placeholder="성별" required/>
               <span>남성</span> 
-	    </label>	
-	    
+	    </label>
+	     
 	    <label class="test_obj">
              &emsp; 
              <input type="radio" name="partner_gender" value="여성" placeholder="성별" required/>
               <span>여성</span> 
 	    </label> <br><br>
+	    
+	     <label for="name"><b style="font-size: 20px;">이메일</b> &nbsp;<span style="color: red; font-size: 25px;">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 &emsp;&emsp;&emsp;
+			 <input type="text"  name="partner_email" placeholder="이메일" class="form-control" required="required"><br>
 	    
 	    <label for="name"><b style="font-size: 20px;">연락처</b>&nbsp;<span style="color: red; font-size: 25px;">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;
 			&emsp;&emsp;&emsp;&emsp; 
@@ -255,12 +267,13 @@ div.jiwon{
  
  
  </div>
- <button type="submit"  class="btn btn-primary" style="margin-left: 700px; width: 300px; height: 80px; font-size: 25px;">지원서 제출</button>
+ <button type="submit"  class="btn btn-primary" style="margin-left: 700px; width: 300px; height: 80px; font-size: 25px;"
+ onclick="btn()">지원서 제출</button>
  </form>
- <script>
-function submit(){
+<script type="text/javascript">
+
+function btn(){
 	alert('신청이 완료되었습니다');
-	
 }
 </script>
 </body>

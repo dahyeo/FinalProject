@@ -1,15 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sist.data.mapper.PartnerServiceMapperInter">
-
+   
+   
    <insert id="insertPartner" parameterType="partner">
-     insert into partner (partner_name,partner_gender,partner_birth,partner_phone,partner_addr,partner_smoking,
+    insert into partner (mem_num,partner_name,partner_gender,partner_email,partner_birth,partner_phone,partner_addr,partner_smoking,
      partner_job,partner_date,partner_time,partner_exp_cat,partner_exp_dog,partner_exp)
-     values(#{partner_name},#{partner_gender},#{partner_birth},#{partner_phone},#{partner_addr},#{partner_smoking},
+      values(#{mem_num},#{partner_name},#{partner_gender},#{partner_email},#{partner_birth},#{partner_phone},#{partner_addr},#{partner_smoking},
      #{partner_job},#{partner_date},#{partner_time},#{partner_exp_cat},#{partner_exp_dog},#{partner_exp})
    </insert>
-  
-   <select id="PartnerList" resultType="partner">
+   
+    <select id="PartnerList" resultType="partner" parameterType="String">
+     select * from partner where partner_num=#{partner_num}
+   </select>
+   
+   <select id="PartnerMuList" resultType="partner" >
      select * from partner
    </select>
+   
+      <select id="getData" parameterType="String" resultType="partner">
+           select * from partner where partner_num=#{partner_num}
+      </select>
+
+  
+  <!--파트너 memnum  -->
+  <select id="getMNum" resultType="String" parameterType="String">
+    select partner_num from partner where mem_num=#{mem_num}  
+  </select>
+  
+  <select id="getName" resultType="String" parameterType="String">
+    select partner_name from partner where mem_num=#{mem_num}
+  </select>
+  
+  <select id="getGender" resultType="String" parameterType="String">
+    select partner_gender from partner where mem_num=#{mem_num}  
+  </select>
+  
+  
+  <select id="getDate" resultType="String" parameterType="String">
+    select partner_date from partner where mem_num=#{mem_num}  
+  </select>
+  
+  <select id="getTime" resultType="String" parameterType="String">
+    select partner_time from partner where mem_num=#{mem_num}  
+  </select>
+  
+    <select id="getExp" resultType="String" parameterType="String">
+    select partner_exp from partner where mem_num=#{mem_num}  
+  </select>
+  
+  <!-- getDataByMNum -->
+  <select id="getDataByMNum" resultType="partner" parameterType="String">
+    select * from partner where mem_num=#{mem_num}
+  </select>
+  
 </mapper>

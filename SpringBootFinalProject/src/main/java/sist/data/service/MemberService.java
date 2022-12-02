@@ -32,6 +32,12 @@ public class MemberService implements MemberServiceInter {
 		// TODO Auto-generated method stub
 		return mapperInter.getName(mem_id);
 	}
+	
+	@Override
+	public String getNum(String mem_id) {
+		// TODO Auto-generated method stub
+		return mapperInter.getNum(mem_id);
+	}
 
 	@Override
 	public int getIdPassCheck(String mem_id, String mem_pass) {
@@ -66,5 +72,31 @@ public class MemberService implements MemberServiceInter {
 		// TODO Auto-generated method stub
 		mapperInter.updateMember(dto);
 	}
+
+	@Override
+	public int getMaxNum() {
+		// TODO Auto-generated method stub
+		return mapperInter.getMaxNum();
+	}
+
+	@Override
+	public void updateTrainerStatus(String mem_num) {
+		// TODO Auto-generated method stub
+		mapperInter.updateTrainerStatus(mem_num);
+	}
+
+	@Override
+	public void updatePetsitterStatus(String mem_num) {
+		// TODO Auto-generated method stub
+		mapperInter.updatePetsitterStatus(mem_num);
+	}
+
+	@Override
+	public int getStatus(String mem_num) {
+		// TODO Auto-generated method stub
+		return mapperInter.getStatus(mem_num);
+	}
+
+	
 
 }

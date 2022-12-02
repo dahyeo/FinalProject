@@ -498,6 +498,11 @@ select {
 	background-color: transparent;
 	color: #6168ff;
 }
+.btn-solid-sm:hover {
+	background-color: transparent;
+	color: #6168ff;
+	border-color: #6168ff;
+}
 
 
 /******************/

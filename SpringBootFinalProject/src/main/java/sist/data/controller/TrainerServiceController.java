@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import sist.data.dto.TrainerDto;
+import sist.data.service.MemberService;
 import sist.data.service.TrainerService;
 
 
@@ -29,19 +30,30 @@ public class TrainerServiceController {
 	@Autowired
 	TrainerService service;
 	
+	@Autowired
+	MemberService mservice;
 	
 	//insert폼 뜨게
 	@GetMapping("/trainerService/trainerform")
-	public String tform()
+	public String tform(HttpSession session)
 	{
-		return "/trainerService/trainerform";
+		//로그인 상태인지 아닌지 체크
+		String loginok=(String)session.getAttribute("loginok");
+		
+		if(loginok==null)
+			return "redirect:../login/main";
+		else {
+			return "/trainerService/trainerform";
+		}
+		
 	}
 	
 	//insert
 	@PostMapping("/trainerService/insert")
 	public String taddform(@ModelAttribute TrainerDto dto,
 			@RequestParam MultipartFile upload,
-			HttpSession session)
+			HttpSession session,
+			@RequestParam String mem_id)
 	{
 		String path=session.getServletContext().getRealPath("/photo");
 		System.out.println(path);
@@ -66,7 +78,9 @@ public class TrainerServiceController {
 			}
 		}
 		
-		
+		//로그인한 id값으로부터 mem_num 구해서 넣기
+		String mem_num=mservice.getNum(mem_id);
+		dto.setMem_num(mem_num);
 		
 		//insert
 		service.insertTrainer(dto);

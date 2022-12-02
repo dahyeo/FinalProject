@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.data.mapper.TrainerProfileMapperInter">
+
+<insert id="insertTrainerProf" parameterType="trainerprofile">
+    
+   insert into trainerprofile
+   (trainer_num,trainer_name,trainer_career,trainer_loc,trainer_content,trainer_date,trainer_photo,
+   trainerprof_subject,trainerprof_star,trainerprof_field,trainerprof_price) 
+   values(#{trainer_num},#{trainer_name},#{trainer_career},#{trainer_loc},#{trainer_content},
+   #{trainer_date},#{trainer_photo},#{trainerprof_subject},#{trainerprof_star},#{trainerprof_field},#{trainerprof_price})
+ </insert>  
+  
+<select id="getData" parameterType="String" resultType="trainerprofile">
+    select * from trainerprofile where trainerprof_num=#{trainerprof_num}
+ </select>
+
+
+<select id="getAllList" resultType="trainerprofile">
+select * from trainerprofile 
+
+</select>
+
+<select id="getSList" resultType="trainerprofile" parameterType="String">
+select * from trainerprofile where trainerprof_num=#{trainerprof_num}
+</select>
+
+ 
+
+
+</mapper> 

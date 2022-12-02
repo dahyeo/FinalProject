@@ -13,4 +13,5 @@
   <definition name="/*/*" extends="layout1">
     <put-attribute name="main" value="/WEB-INF/{1}/{2}.jsp"/>
   </definition>
+  
 </tiles-definitions>

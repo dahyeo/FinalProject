@@ -47,9 +47,7 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdown01">
                             <li><a class="dropdown-item" href="${root }/petsitter">펫시터 서비스</a></li>
                             <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" href="${root }/petsitter/housesitting">방문 돌봄</a></li>
-                            <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" href="${root }/petsitter/dogwalking">방문 산책</a></li>
+                            <li><a class="dropdown-item" href="${root }/partnerprofile/partnerlist">펫시터 프로필</a></li>
                         </ul>
                     </li>
                     
@@ -58,12 +56,16 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdown01">
                             <li><a class="dropdown-item" href="${root }/trainer">훈련 서비스</a></li>
                             <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" href="${root }/trainer/profile">훈련사 프로필</a></li>
+                           <li><a class="dropdown-item" href="${root }/trainerprofile/trainerlist">훈련사 프로필</a></li>
                         </ul>
                     </li>
                     
                     <li class="nav-item">
                         <a class="nav-link" href="${root }/trainer/qna">훈련사 Q&A</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="${root }/beauty">미용샵</a>
                     </li>
                     
                     <li class="nav-item dropdown">
@@ -76,16 +78,16 @@
                     </li>
                     
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="${root }/partner/petsitter" data-bs-toggle="dropdown" aria-expanded="false">파트너 지원</a>
+                        <a class="nav-link dropdown-toggle" href="${root }/partnerService/partnerlist" data-bs-toggle="dropdown" aria-expanded="false">파트너 지원</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown01">
                            <li><a class="dropdown-item" href="${root }/partnerService/partnerlist">펫시터 지원</a></li>
-                            <li><div class="dropdown-divider"></div></li>
-                             <li><a class="dropdown-item" href="${root }/trainerService/trainerlist">훈련사 지원</a></li>
+                           <li><div class="dropdown-divider"></div></li>
+                           <li><a class="dropdown-item" href="${root }/trainerService/trainerlist">훈련사 지원</a></li>
                         </ul>
                     </li>
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-solid-sm" href="#contact">문의하기</a>
+                    <a class="btn-solid-sm" href="../chatbot">챗봇 문의</a>
                 </span>
                 
             </div> <!-- end of navbar-collapse -->

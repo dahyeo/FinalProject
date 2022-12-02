@@ -17,4 +17,5 @@ public class MemberDto {
 	public String mem_phone;
 	public String mem_addr;
 	public int mem_point;
+	public int status;
 }

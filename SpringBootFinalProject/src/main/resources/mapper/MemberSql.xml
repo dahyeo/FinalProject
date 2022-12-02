@@ -2,13 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sist.data.mapper.MemberMapperInter">
   <insert id="insertMember" parameterType="member">
-    insert into member(mem_id,mem_pass,mem_name,mem_email,mem_birth,mem_phone,mem_addr,mem_point) values(#{mem_id},#{mem_pass},#{mem_name},#{mem_email},#{mem_birth},#{mem_phone},#{mem_addr},5000)
+    insert into member(mem_id,mem_pass,mem_name,mem_email,mem_birth,mem_phone,mem_addr,mem_point,status) values(#{mem_id},#{mem_pass},#{mem_name},#{mem_email},#{mem_birth},#{mem_phone},#{mem_addr},5000,#{status})
   </insert>
   <select id="getSearchId" resultType="int" parameterType="String">
     select count(*) from member where mem_id=#{mem_id}
   </select>
   <select id="getName" resultType="String" parameterType="String">
     select mem_name from member where mem_id=#{mem_id}
+  </select>
+  <select id="getNum" resultType="String" parameterType="String">
+    select mem_num from member where mem_id=#{mem_id}
   </select>
   <select id="getIdPassCheck" resultType="int" parameterType="HashMap">
     select count(*) from member where mem_id=#{mem_id} and mem_pass=#{mem_pass}
@@ -25,4 +28,16 @@
   <update id="updateMember" parameterType="member">
     update member set mem_pass=#{mem_pass},mem_name=#{mem_name},mem_email=#{mem_email},mem_phone=#{mem_phone},mem_addr=#{mem_addr} where mem_num=#{mem_num}
   </update>
+  <select id="getMaxNum" resultType="int">
+    select max(mem_num) from member
+  </select>
+  <update id="updateTrainerStatus" parameterType="String">
+    update member set status=1 where mem_num=#{mem_num}
+  </update>
+  <update id="updatePetsitterStatus" parameterType="String">
+    update member set status=2 where mem_num=#{mem_num}
+  </update>
+  <select id="getStatus" resultType="int" parameterType="String">
+    select status from member where mem_num=#{mem_num}
+  </select>
 </mapper>

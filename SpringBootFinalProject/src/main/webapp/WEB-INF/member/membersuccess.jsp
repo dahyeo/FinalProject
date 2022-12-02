@@ -17,7 +17,7 @@
 <body>
 <script type="text/javascript">
   alert("회원가입 되셨습니다.");
-  location.replace("/");
+  location.replace("/member/animalRegister?mem_num=${mem_num}");
 </script>
 </body>
 </html>
