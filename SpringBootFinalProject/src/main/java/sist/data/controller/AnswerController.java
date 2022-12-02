@@ -44,7 +44,7 @@ public class AnswerController {
 		
 		dto.setTrainer_name(trainer_name);
 		
-		String trainer_num = tservice.getTrainerNumByName(trainer_name);
+		String trainer_num = tservice.getNumByTName(trainer_name);
 		dto.setTrainer_num(trainer_num);
 		
 		mv.addObject("dto", dto);

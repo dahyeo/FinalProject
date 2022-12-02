@@ -94,9 +94,11 @@ public class TrainerService implements TrainerServiceInter {
 	}
 
 	@Override
-	public String getTrainerNumByName(String trainer_name) {
+	public String getNumByTName(String trainer_name) {
 		// TODO Auto-generated method stub
-		return mapperInter.getTrainerNumByName(trainer_name);
+		return mapperInter.getNumByTName(trainer_name);
 	}
 
+	
+	
 }

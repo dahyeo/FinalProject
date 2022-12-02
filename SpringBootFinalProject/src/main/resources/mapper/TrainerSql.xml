@@ -59,8 +59,9 @@
   <select id="getDataByMNum" resultType="trainer" parameterType="String">
     select * from trainer where mem_num=#{mem_num}
   </select>
-  <!-- getTrainerNum -->
-   <select id="getTrainerNumByName" resultType="String" parameterType="String">
-  	select trainer_num from trainer where trainer_name=#{trainer_name}
+ 	 <!--getNumByName  -->
+  <select id="getNumByTName" resultType="String" parameterType="String">
+    select trainer_num from trainer where trainer_name=#{trainer_name}
   </select>
+  
 </mapper>
