@@ -13,7 +13,8 @@
 button{
 	width: 300px;
 	height: 100px;
-	border: 0px solid black;
+	border: 3px solid #94dbff;
+	border-radius: 30px;
 }
 div{
 	width: 1000px;
@@ -25,8 +26,8 @@ div{
 </head>
 <body>
 <div align="center">
-	<button onclick="location.href='myprofil?mem_id=${sessionScope.myid }'">내 프로필</button>
-	<button onclick="location.href='petprofil'">반려동물 프로필</button>
+	<button onclick="location.href='myprofil?mem_id=${sessionScope.myid }'">내 프로필</button>&nbsp;&nbsp;
+	<button onclick="location.href='petprofil?mem_num=${dto.mem_num}'">반려동물 프로필</button>
 </div>
 
 </body>
