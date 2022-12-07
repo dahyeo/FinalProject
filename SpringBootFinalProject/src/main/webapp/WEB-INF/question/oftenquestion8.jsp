@@ -14,191 +14,59 @@
 <script src="https://kit.fontawesome.com/4f8084f592.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<style type="text/css">
-body *
-{
-	font-family: 'Spoqa Han Sans Neo';
-}
-
-div.whole{
-	width:100%;
-	height: 100%;
-	margin-top:25%;
-}
-
-div.search
-{
-	display:flex;
-	align-items:center;
-	padding-left:24px;
-	width:678px;
-	height:65px;
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	margin-top:28px; 
-	border-radius: 5px;
-}
-
-input.searchword
-{
-	width:100%;
-	 font-size:17px; 
-	 letter-spacing:-0.2px; 
-	 line-height:25px;
-	 border:none;
-	 color:#333333;
-	 pointer-events:auto
-}
-
-ul.oq_list, ul.q_category
-{
-list-style:  none;
-margin-left: -35px;
-margin-top: 20px;
-
-}
-ul.oq_list li
-{
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	border-radius: 10px;
-	width: 180px;
-	height: 60px;
-	float: left;
-	margin-right: 15px;
-	margin-bottom:10px;
-	text-align: center;
-	line-height: 60px;
-}
-ul.oq_list li a, ul.q_category li a
-{
-	text-decoration: none;
-	color:#555555;
-}
-
-ul.q_category li
-{
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	border-radius: 10px;
-	width: 85px;
-	height: 50px;
-	float: left;
-	margin-right: 10px;
-	margin-bottom:10px;
-	text-align: center;
-	line-height: 50px;
-	cursor: pointer;
-}
-#qlist
-{
-	width:470px;
-	height:370px;
-	background-color: white;
-	box-shadow: 0 0px 3px 3px rgba(0,0,0,0.07);
-	border-radius: 7px;
-	margin-bottom: 50px;
-	padding: 30px 30px 30px 30px;
-	float:left; 
-	margin-right: 40px;
-	cursor: pointer;
-}
-
-</style>
-
 <title>Insert title here</title>
 </head>
 <body>
-<div class="position-absolute top-0 start-50 translate-middle whole">
-<div>
-  <div style=" margin-left:15.5%;">
-	<div style="width: 85%;  margin-top: 12%;">
-		<div>
-			<h1 style="font-size:50px; font-weight: 600; color:#555555;">훈련사 Q&A</h1>
-			<p style="font-size:17px; color:#555555; margin-top: 24px;">우리 강아지, 고양이가 왜 그럴까요? 훈련사가 답변해드려요!</p>
+<div style="width: 1000px;height:1039px;"> 
+	<div style="width: 1000px; margin-top:5%; margin-left: 21%; margin-bottom: 15px;">
+	<b style="font-size: 24px; color:#555555;">자주 묻는 질문</b>
+	<a href="qna" style="font-size: 24px; color:gray; float:right; text-decoration: none;">목록으로 돌아가기 > </a><br>
+	</div>
+	
+	<div style="width: 1000px; margin-left: 21%;">
+	
+	</div>
+	
+	<div style="width:1000px; margin-left: 21%; margin-top:10px; border:1px solid #e0e0e0; padding: 75px 80px 80px 80px; border-radius: 12px;">
+	<img src="${root }/image/popular.png" style="width:23px;height:30px;margin-right:7px; float: left;">
+	<p style=" font-size:17px; font-weight:500; color:#999999; line-height: 30px;">사회성 관련 최다 질문</p>	
+	<p style="font-size: 32px; font-weight: 600; line-height:35px; color:black; ">다른 반려견을 무서워하거나 공격적으로 반응해요</p>
+	<p style="font-size:17px;color:#999999;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word; margin-bottom: 0">
+	- 다른 반려견을 보고 짖어요.
+	- 다른 반려견을 무서워해요.
+	- 다른 반려견에게 공격적이에요.
+	</p>
+	<br><hr><br>
+		<div style="margin-top:18px;margin-bottom:55px">
+			<h3 style="font-size:17px;letter-spacing:-0.1px;color:#999999;font-weight:500"><i class="bi bi-record-circle-fill"></i> 원인 분석</h3>
+			<p style="font-size:17px;color:#333333;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word">
+			천성적인 성향과 사회화 시기 때 다른 반려견과의 교류 부족, 타 반려견에게 잘못된 놀이, 인사 방법 학습 등이 이루어지는 경우가 있으며 사건, 사고의 경험으로 인해 트라우마로 특정 반려견에게 무서워하게 되는 경우가 있습니다.
+			</p>
 		</div>
-
-		<!-- 검색창 -->
-		<form action="qna" >
-		<div class="search">
-			<input type="hidden" name="searchcolumn" value="que_subject">
-			<input type="text" name="searchword" class="searchword" autocomplete="off" value="" placeholder="궁금한 키워드를 검색해보세요">
-			<img src="../image/search.png" style="width:30px; height:30px; margin-right:15px;" >
-		</div>
-		</form>
-	</div>
-	
-	<div style="width:85%; margin-top:12% ">
-		<h4>자주 묻는 질문</h4>
-		<ul class="oq_list">
-			<li><a href="oq1">산책을 무서워해요</a></li>
-			<li><a href="oq2">산책시 짖어요</a></li>
-			<li><a href="oq3">배변 실수를 해요</a></li>
-			<li><a href="oq4">식분증이 있어요</a></li>
-			<li><a href="oq5">입질이 있어요</a></li>
-			<li><a href="oq6">자꾸 깨물어요</a></li>
-			<li><a href="oq7">분리불안이 있어요</a></li>
-			<li><a href="oq8">사회성이 부족해요</a></li>
-		</ul>
-	</div>
-	
-	<div style="width:85%; margin-top:18% ">
-	<h4>질문 카테고리</h4>
-	<form action="qna">
-	<input type="hidden" name="searchcolumn" value="que_category">
-	<input type="hidden" name="searchword" id="searchword">
-		<ul class="q_category">
-			<li><a href="qna">전체</a></li>
-			<li value="배변">배변</li>
-			<li value="산책">산책</li>
-			<li value="공격성">공격성</li>
-			<li value="짖음">짖음</li>
-			<li value="기본예절">기본예절</li>
-			<li value="기타">기타</li>
-		</ul>
-		<button type="submit" id="btn" style="display: none;"></button>
-	</form>
-	</div>
-	<script type="text/javascript">
-	$("ul.q_category>li").click(function(){
-		var cate = $(this).attr("value");
-		//alert(cate);
-		$("#searchword").val(cate);
-		$("#btn").trigger("click");
-	})
-	
-	</script>
-
-	<div style="width:85%; margin-top:12%; ">
-	<p style="color:gray;">전체 글 ${count }개 &nbsp;&nbsp;&nbsp;
-		<button type="button" class="btn btn-light" onclick="location.href='form'">
-		<i class="bi bi-pencil-square"></i> 질문하기</button></p>
-		<c:forEach var="dto" items="${list}">
-		<div id="qlist" onclick="location.href='que_detail?que_num=${dto.que_num}'">
-			<div style="display:flex;flex-direction:column;cursor:pointer;padding:15px;">
-			<img src="${root }/image/question.png" style="width: 36px; height: 26px; margin-right: 13px; ">
-			<p style="font-weight:600; font-size:20px;letter-spacing:-0.2px;color:#393C47; margin-left:45px; margin-top: -24px;">
-			${dto.que_subject }</p>
-			<hr>
-			</div>
-			<p style="height:115px;font-size:17px;color:#333333;line-height:28px;overflow:hidden;
-			 padding: 0 15px 14px 15px; ">${dto.que_content}</p>
+		
+		<div style="margin-top:18px;">
 			
-			<div style="width:469px;padding:32px 38px 32px 32px; background-color:#FAFAFC; margin-left: -30px; border-bottom-left-radius:7px;border-bottom-right-radius:7px; 
-			font-weight: 600; color: #393C47; margin-top: 30px;">
-			<c:if test="${dto.acount==0 }">
-			<img src="${root }/image/w2.jpeg" style=“width:24px;height:24px;border-radius:12px;margin-left:10px;margin-right:10px;” >
-			<span>답변 대기중</span></c:if>
-			<c:if test="${dto.acount>0 }">
-			<img src="${root }/image/w1.png" style=“width:24px;height:24px;border-radius:12px;margin-left:10px;margin-right:10px;” >
-			<span >훈련사 답변 완료 </span> </c:if>
-			</div>
+			<h3 style="font-size:17px;letter-spacing:-0.1px;color:#999999;font-weight:500;marg8in-top: -1"><i class="bi bi-record-circle-fill"></i> 솔루션 제안</h3>
+			<p style="font-size:17px;color:#333333;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word">
+			반려견끼리의 사회성은 우리 사람이 조작적으로 개선해주기란 매우 어렵습니다. 대신, 타 반려견에게 익숙해질 수 있도록 환경을 조성해주어야 합니다.
+
+			1. 당분간 애견 카페, 운동장의 방문을 지양해주세요.
+			애견 운동장, 카페, 유치원의 경우 반려견이 피하고 싶으면 피할 수 있는 환경이 부족합니다. 보호자님과 함께 있다고 하더라도 긴장되는 상황이 생길 때마다 보호자님 품으로 도망가는 상황이 펼쳐진다면 스스로 타 반려견에 대해 적응하려고 하지 않을 수 있습니다. 물론, 반려견 전문 관리사님이 견종과 성향, 체급을 고려하여 적절히 반려견을 분리 시켜 반려견을 케어 하는 애견 유치원이 있다면 너무 좋습니다. 다만, 최종적으로 이 모든 공간에 성향이 젠틀한 반려견들만 있다면 매우 좋겠지만 현실적으로 반려견에게 부담스러운 상황이 불가피하게 마주할 수 있으므로, 애견 유치원을 택할 경우 직접 방문하여 케어의 방법, 사회화 교육에 대한 설명과 이해를 충분히 들으신 뒤 결정하시는 것이 좋겠습니다.
+			
+			2. 고정적인 산책 친구를 만들어주세요.
+			다양한 반려견을 많이 만나는 경험보다 '반려견 자체'의 대한 두려움을 제거해주는 것이 첫 번째입니다. 이때 상대 반려견의 경우 성향과 행동이 모두 형성 된 2살 이상의 반려견이며 다른 반려견에게 크게 관심이 없는 반려견일 수록 좋습니다. 같이 붙어서 산책을 하지 않아도 상관 없습니다. 간격을 두고 서로 그림자처럼 산책을 하기도 하고 서로 교차하기도 하는 경험을 가져 주세요. / 모르는 반려견의 뒤를 15m-20m 거리를 두고 뒤를 쫓아가며 상대 반려견이 있던 장소(마킹)에서 냄새를 맡는 것도 큰 도움이 됩니다 :)
+			* 서로의 장난감(공, 인형)을 만나기 전 서로 교환하는 경험을 해주세요. 타 반려견에 대한 정보를 간접적으로 느끼는 것에 큰 도움이 됩니다.
+			
+			<i class="bi bi-check-lg"></i>보호자님의 적절한 대처 방법
+			다른 반려견이 달려드는 상황 및 위험한 상황이 아니라면 안아주지 않도록 해주세요. 다른 반려견이 다가올 때 안아주는 것이 습관 되면 스스로 해결하지 않고 보호자님에게만 의지하려고 할 것입니다. 스스로 인사를 하고 싶으면 하고, 피하고 싶으면 피할 수 있도록 유도 정도만 해주세요. 이름을 부르거나 눈을 마주칠 필요 없습니다. 줄만 꼬이지 않게 해주세요.
+			* 반려견이 서로 냄새를 맡고 있을 때 줄이 계속 당겨진다면 긴장도가 올라갑니다. 줄은 항상 느슨한 상태여야 하는 점 기억해주세요!
+			
+			이 밖에도 각종 상황과 반려견의 성향, 보호자님의 생활 습관 등에 따라 교육 방법이 달라지거나 추가해야 할 사항이 있을 수 있습니다. 직접적인 전문가의 도움을 받아보시는 것을 권장 드립니다 :-) 위 내용 중 이해가 안되거나 교육하시면서 어려운 일이 있다면 언제든지 추가 질문 해주세요! 그럼 행복한 반려 생활이 되시기를 바랍니다.
+			</p>
 		</div>
-		</c:forEach>
-	</div>
-  </div>
-  </div>
-  
-</div>
+	</div> 
+</div>	
+	
 </body>
 </html>
+

@@ -14,191 +14,87 @@
 <script src="https://kit.fontawesome.com/4f8084f592.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<style type="text/css">
-body *
-{
-	font-family: 'Spoqa Han Sans Neo';
-}
-
-div.whole{
-	width:100%;
-	height: 100%;
-	margin-top:25%;
-}
-
-div.search
-{
-	display:flex;
-	align-items:center;
-	padding-left:24px;
-	width:678px;
-	height:65px;
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	margin-top:28px; 
-	border-radius: 5px;
-}
-
-input.searchword
-{
-	width:100%;
-	 font-size:17px; 
-	 letter-spacing:-0.2px; 
-	 line-height:25px;
-	 border:none;
-	 color:#333333;
-	 pointer-events:auto
-}
-
-ul.oq_list, ul.q_category
-{
-list-style:  none;
-margin-left: -35px;
-margin-top: 20px;
-
-}
-ul.oq_list li
-{
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	border-radius: 10px;
-	width: 180px;
-	height: 60px;
-	float: left;
-	margin-right: 15px;
-	margin-bottom:10px;
-	text-align: center;
-	line-height: 60px;
-}
-ul.oq_list li a, ul.q_category li a
-{
-	text-decoration: none;
-	color:#555555;
-}
-
-ul.q_category li
-{
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	border-radius: 10px;
-	width: 85px;
-	height: 50px;
-	float: left;
-	margin-right: 10px;
-	margin-bottom:10px;
-	text-align: center;
-	line-height: 50px;
-	cursor: pointer;
-}
-#qlist
-{
-	width:470px;
-	height:370px;
-	background-color: white;
-	box-shadow: 0 0px 3px 3px rgba(0,0,0,0.07);
-	border-radius: 7px;
-	margin-bottom: 50px;
-	padding: 30px 30px 30px 30px;
-	float:left; 
-	margin-right: 40px;
-	cursor: pointer;
-}
-
-</style>
-
 <title>Insert title here</title>
 </head>
 <body>
-<div class="position-absolute top-0 start-50 translate-middle whole">
-<div>
-  <div style=" margin-left:15.5%;">
-	<div style="width: 85%;  margin-top: 12%;">
-		<div>
-			<h1 style="font-size:50px; font-weight: 600; color:#555555;">훈련사 Q&A</h1>
-			<p style="font-size:17px; color:#555555; margin-top: 24px;">우리 강아지, 고양이가 왜 그럴까요? 훈련사가 답변해드려요!</p>
-		</div>
+<div style="width: 1000px;height:1039px;"> 
+	<div style="width: 1000px; margin-top:5%; margin-left: 21%; margin-bottom: 15px;">
+	<b style="font-size: 24px; color:#555555;">자주 묻는 질문</b>
+	<a href="qna" style="font-size: 24px; color:gray; float:right; text-decoration: none;">목록으로 돌아가기 > </a><br>
+	</div>
+	
+	<div style="width: 1000px; margin-left: 21%;">
+	
+	</div>
+	
+	<div style="width:1000px; margin-left: 21%; margin-top:10px; border:1px solid #e0e0e0; padding: 75px 80px 80px 80px; border-radius: 12px;">
+	<img src="${root }/image/popular.png" style="width:23px;height:30px;margin-right:7px; float: left;">
+	<p style=" font-size:17px; font-weight:500; color:#999999; line-height: 30px;">공격성 관련 최다 질문</p>	
+	<p style="font-size: 32px; font-weight: 600; line-height:35px; color:black; ">빗질하거나 만질 때, 손이나 발을 자꾸 깨물어요</p>
+	<p style="font-size:17px;color:#999999;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word; margin-bottom: 0">
+	- 빗질할 때 입질을 해요
+	- 산책 후 발을 닦이거나 목욕을 할 때 입질을 해요
+	- 산책 줄을 맬 때 입질을 해요
+	- 만져달라고 해서 만져주는데 갑자기 으르렁대요
+	</p>
+	<br><hr><br>
+		<div style="margin-top:18px;margin-bottom:55px">
+			<h3 style="font-size:17px;letter-spacing:-0.1px;color:#999999;font-weight:500"><i class="bi bi-record-circle-fill"></i> 원인 분석</h3>
+			<p style="font-size:17px;color:#333333;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word">
+			반려견들이 싫다는 감정을 무는 것으로 표현하기까지 분명 단계가 있었을 것입니다. 처음에는 싫다고 혀를 낼름거리며 표현하다가 그다음엔 발버둥쳐보고, 그래도 안되면 으르렁도 대고보, 그러다 무는것으로까지 표현하게 됐을것입니다.
 
-		<!-- 검색창 -->
-		<form action="qna" >
-		<div class="search">
-			<input type="hidden" name="searchcolumn" value="que_subject">
-			<input type="text" name="searchword" class="searchword" autocomplete="off" value="" placeholder="궁금한 키워드를 검색해보세요">
-			<img src="../image/search.png" style="width:30px; height:30px; margin-right:15px;" >
-		</div>
-		</form>
-	</div>
-	
-	<div style="width:85%; margin-top:12% ">
-		<h4>자주 묻는 질문</h4>
-		<ul class="oq_list">
-			<li><a href="oq1">산책을 무서워해요</a></li>
-			<li><a href="oq2">산책시 짖어요</a></li>
-			<li><a href="oq3">배변 실수를 해요</a></li>
-			<li><a href="oq4">식분증이 있어요</a></li>
-			<li><a href="oq5">입질이 있어요</a></li>
-			<li><a href="oq6">자꾸 깨물어요</a></li>
-			<li><a href="oq7">분리불안이 있어요</a></li>
-			<li><a href="oq8">사회성이 부족해요</a></li>
-		</ul>
-	</div>
-	
-	<div style="width:85%; margin-top:18% ">
-	<h4>질문 카테고리</h4>
-	<form action="qna">
-	<input type="hidden" name="searchcolumn" value="que_category">
-	<input type="hidden" name="searchword" id="searchword">
-		<ul class="q_category">
-			<li><a href="qna">전체</a></li>
-			<li value="배변">배변</li>
-			<li value="산책">산책</li>
-			<li value="공격성">공격성</li>
-			<li value="짖음">짖음</li>
-			<li value="기본예절">기본예절</li>
-			<li value="기타">기타</li>
-		</ul>
-		<button type="submit" id="btn" style="display: none;"></button>
-	</form>
-	</div>
-	<script type="text/javascript">
-	$("ul.q_category>li").click(function(){
-		var cate = $(this).attr("value");
-		//alert(cate);
-		$("#searchword").val(cate);
-		$("#btn").trigger("click");
-	})
-	
-	</script>
-
-	<div style="width:85%; margin-top:12%; ">
-	<p style="color:gray;">전체 글 ${count }개 &nbsp;&nbsp;&nbsp;
-		<button type="button" class="btn btn-light" onclick="location.href='form'">
-		<i class="bi bi-pencil-square"></i> 질문하기</button></p>
-		<c:forEach var="dto" items="${list}">
-		<div id="qlist" onclick="location.href='que_detail?que_num=${dto.que_num}'">
-			<div style="display:flex;flex-direction:column;cursor:pointer;padding:15px;">
-			<img src="${root }/image/question.png" style="width: 36px; height: 26px; margin-right: 13px; ">
-			<p style="font-weight:600; font-size:20px;letter-spacing:-0.2px;color:#393C47; margin-left:45px; margin-top: -24px;">
-			${dto.que_subject }</p>
-			<hr>
-			</div>
-			<p style="height:115px;font-size:17px;color:#333333;line-height:28px;overflow:hidden;
-			 padding: 0 15px 14px 15px; ">${dto.que_content}</p>
+			반려견이 싫다는 내색을 했을 때 "싫어하니까 하지 말아야겠다"가 아니라 "싫어하네? 이거 별거 아니라고, 괜찮다고 알려주고 좋아하게 만들어줘야겠다"라고 생각해 주면서 꾸준하게 교육을 진행해 주세요. 
+			반려견이 매너있게 감정을 표현할 때 보호자가 그것을 알아주어야 쉽게 으르렁거리고 공격하는 반려견이 되지 않습니다.
 			
-			<div style="width:469px;padding:32px 38px 32px 32px; background-color:#FAFAFC; margin-left: -30px; border-bottom-left-radius:7px;border-bottom-right-radius:7px; 
-			font-weight: 600; color: #393C47; margin-top: 30px;">
-			<c:if test="${dto.acount==0 }">
-			<img src="${root }/image/w2.jpeg" style=“width:24px;height:24px;border-radius:12px;margin-left:10px;margin-right:10px;” >
-			<span>답변 대기중</span></c:if>
-			<c:if test="${dto.acount>0 }">
-			<img src="${root }/image/w1.png" style=“width:24px;height:24px;border-radius:12px;margin-left:10px;margin-right:10px;” >
-			<span >훈련사 답변 완료 </span> </c:if>
-			</div>
+			그리고 이미 보호자의 손길에 어느정도 부정적인 인식이 심어져 있어, 보호자가 무언가를 하려고 하면 믿고 따라오는게 아니라 의심하면서 일단 피하려고 한다는게 문제입니다.
+			손에 대한 재인식과 더불어 스킨십에 대한 긍정적 교육이 필요합니다!
+			</p>
 		</div>
-		</c:forEach>
-	</div>
-  </div>
-  </div>
-  
-</div>
+		
+		<div style="margin-top:18px;">
+			
+			<h3 style="font-size:17px;letter-spacing:-0.1px;color:#999999;font-weight:500;marg8in-top: -1"><i class="bi bi-record-circle-fill"></i> 솔루션 제안</h3>
+			<p style="font-size:17px;color:#333333;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word">
+			기본적으로 스킨십에 예민한 반려견들은 평소에도 스킨십자체를 많이 줄이셔야 합니다. 평소에도 안아주거나 쓰다듬는 행위를 많이 줄여주세요!
+			특히 엎드려 쉬고 있을 때는 더욱 만지지 말아주세요! 더불어 사람 손에 대한 좋은 기억을 심어주기 위해서는 평소에 손으로 혼내는 행동을 자제하시고, 손에 대한 좋은 기억심기교육을 해주세요. (손가락으로 휘두르며 혼내지 않기, 코때리기나 억지로 안지 않기, 주둥이 잡기 등)
+			
+			물렸을 때 손을 피하거나 행동을 멈추거나 화를 내면 반려견은 순간적으로 문제가 해결됐다고 생각하거나 오히려 더 부정적인 생각을 하게 될 수 있습니다. 그래서 보호장갑을 착용하셔서 혹시 물리더라도 크게 반응하지 않아야 합니다. (물어도 보호자는 흔들리지 않으며, 무는 걸로 문제를 해결할 수 없음)
+			동시에 손에 대한 좋은 기억과 스킨십 연습을 해주셔야 합니다.
+			
+			<i class="bi bi-check-lg"></i>손터치 교육을 진행해 주세요
+			- 칭찬구호를 정해주세요 (옳지, 잘했어, 오케이 등등)
+			- 손바닥을 내민 뒤 반려견이 손바닥 냄새를 맡으러 고개를 내밀거나 코를 손바닥에 대면 옳지라고 말한 뒤 간식을 툭 던져주세요.
+			- 다시한번 손을 접을 접었다가 다시 손바닥을 내밀고 냄새를 맡으면 간식을 주세요
+			- 사람 손을 관심을 갖고 터치하면 오히려 좋은 일이 생긴다는 기억을 심어줄 수 있습니다. (이때 혹시 손바닥에 전혀관심이 없다면 손바닥에 간식냄새를 살짝 묻혀 힌트를 줄 수 있습니다)
+						
+			<i class="bi bi-check-lg"></i>빗질 교육하기
+			- 빗을 꺼내 바닥에 두고 주변에 간식을 뿌려준 뒤 다 먹고나면 빗을 치워줍니다. ( 빗이라는 물건 자체에 긍정적 기억심어주기)
+			- 빗=간식 이라는 생각이 쌓이면 빗을 꺼내기만 해도 기분이 좋아집니다.
+			- 앉아를 시킨 뒤 빗을 보여주고 냄새를 맡으면 칭찬구호 -> 간식을 툭 던져줍니다.
+			- 앉아를 시킨 뒤 빗을 살짝 몸(머리, 목, 등, 발 등 중에 가장 괜찮아 하는 부분) 에 살짝 댔다가 바로 떼어준 뒤 칭찬구호 -> 간식을 줍니다.
+			- 빗을 몇초정도 댔다가 칭찬구호 -> 간식
+			- 빗을 살짝 쓰윽 움직인 뒤 칭찬구호 -> 간식
+			- 빗을 두어번 쓰윽 움직인 뒤 칭찬구호 -> 간식
+			- 부위를 점점 예민한 부분으로 조금씩 범위를 넓혀갑니다.
+			* 이때 혹시라도 입을 대거나 뒤로 빠지는 등 불편한 신호를 보인다면, 좀 더 쉬운 단계에서 충분히 연습해 주셔야 합니다!
+			
+			<i class="bi bi-check-lg"></i>발 닦기 연습하기
+			- 보호자님 손바닥 위에 앞발을 올리는 손 개인기를 먼저 가르칩니다.
+			- 처음에는 손바닥을 살짝 터치만해도 간식
+			- 손바닥 위에 1-2초 머물면 간식
+			- 손바닥 위에 1-2초 머물때 아주 살짝 쥐어본 뒤 다시 피고 간식
+			- 손바닥 위에 1-2초 머물 때 살짝 쥐어본 뒤 살짝 주물럭 대는 느낌만 주고 간식
+			- 손바닥 위에 물티슈를 올리고, 손바닥 살짝 터치하는 부분부터 다시 반복합니다.
+			
+			* 이런식으로 보호자님이 반려견의 발을 억지로 잡는게 아니라 반려견이 자신의 발을 보호자님의 손에 얹는 것으로 변경해 주셔야 하고, 처음에는 깨끗하게 발을 닦는다기보다는 연습을 목적으로만 해주세요.
+			* 마찬가지로 혹시 발을 빼거나 싫어하는 신호를 보낸다면, 좀 더 쉬운 이전단계에서 충분히 연습해 주세요.
+			
+			공격성은 보호자님께서 겁을 먹거나 두려움이 생기는 순간 교육하시기가 정말 힘들어 집니다. 혹시, 보호자님께서 혼자 해결하기 힘드시다면 꼭 전문가의 도움을 받아 더 행동이 습관해 되기전에 빠른 시일 내 개선해 나가시기를 추천드립니다!			
+			</p>
+		</div>
+	</div> 
+</div>	
+	
 </body>
 </html>
+

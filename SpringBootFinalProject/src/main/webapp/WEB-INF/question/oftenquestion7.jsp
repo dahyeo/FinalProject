@@ -14,191 +14,69 @@
 <script src="https://kit.fontawesome.com/4f8084f592.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<style type="text/css">
-body *
-{
-	font-family: 'Spoqa Han Sans Neo';
-}
-
-div.whole{
-	width:100%;
-	height: 100%;
-	margin-top:25%;
-}
-
-div.search
-{
-	display:flex;
-	align-items:center;
-	padding-left:24px;
-	width:678px;
-	height:65px;
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	margin-top:28px; 
-	border-radius: 5px;
-}
-
-input.searchword
-{
-	width:100%;
-	 font-size:17px; 
-	 letter-spacing:-0.2px; 
-	 line-height:25px;
-	 border:none;
-	 color:#333333;
-	 pointer-events:auto
-}
-
-ul.oq_list, ul.q_category
-{
-list-style:  none;
-margin-left: -35px;
-margin-top: 20px;
-
-}
-ul.oq_list li
-{
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	border-radius: 10px;
-	width: 180px;
-	height: 60px;
-	float: left;
-	margin-right: 15px;
-	margin-bottom:10px;
-	text-align: center;
-	line-height: 60px;
-}
-ul.oq_list li a, ul.q_category li a
-{
-	text-decoration: none;
-	color:#555555;
-}
-
-ul.q_category li
-{
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	border-radius: 10px;
-	width: 85px;
-	height: 50px;
-	float: left;
-	margin-right: 10px;
-	margin-bottom:10px;
-	text-align: center;
-	line-height: 50px;
-	cursor: pointer;
-}
-#qlist
-{
-	width:470px;
-	height:370px;
-	background-color: white;
-	box-shadow: 0 0px 3px 3px rgba(0,0,0,0.07);
-	border-radius: 7px;
-	margin-bottom: 50px;
-	padding: 30px 30px 30px 30px;
-	float:left; 
-	margin-right: 40px;
-	cursor: pointer;
-}
-
-</style>
-
 <title>Insert title here</title>
 </head>
 <body>
-<div class="position-absolute top-0 start-50 translate-middle whole">
-<div>
-  <div style=" margin-left:15.5%;">
-	<div style="width: 85%;  margin-top: 12%;">
-		<div>
-			<h1 style="font-size:50px; font-weight: 600; color:#555555;">훈련사 Q&A</h1>
-			<p style="font-size:17px; color:#555555; margin-top: 24px;">우리 강아지, 고양이가 왜 그럴까요? 훈련사가 답변해드려요!</p>
-		</div>
-
-		<!-- 검색창 -->
-		<form action="qna" >
-		<div class="search">
-			<input type="hidden" name="searchcolumn" value="que_subject">
-			<input type="text" name="searchword" class="searchword" autocomplete="off" value="" placeholder="궁금한 키워드를 검색해보세요">
-			<img src="../image/search.png" style="width:30px; height:30px; margin-right:15px;" >
-		</div>
-		</form>
+<div style="width: 1000px;height:1039px;"> 
+	<div style="width: 1000px; margin-top:5%; margin-left: 21%; margin-bottom: 15px;">
+	<b style="font-size: 24px; color:#555555;">자주 묻는 질문</b>
+	<a href="qna" style="font-size: 24px; color:gray; float:right; text-decoration: none;">목록으로 돌아가기 > </a><br>
 	</div>
 	
-	<div style="width:85%; margin-top:12% ">
-		<h4>자주 묻는 질문</h4>
-		<ul class="oq_list">
-			<li><a href="oq1">산책을 무서워해요</a></li>
-			<li><a href="oq2">산책시 짖어요</a></li>
-			<li><a href="oq3">배변 실수를 해요</a></li>
-			<li><a href="oq4">식분증이 있어요</a></li>
-			<li><a href="oq5">입질이 있어요</a></li>
-			<li><a href="oq6">자꾸 깨물어요</a></li>
-			<li><a href="oq7">분리불안이 있어요</a></li>
-			<li><a href="oq8">사회성이 부족해요</a></li>
-		</ul>
+	<div style="width: 1000px; margin-left: 21%;">
+	
 	</div>
 	
-	<div style="width:85%; margin-top:18% ">
-	<h4>질문 카테고리</h4>
-	<form action="qna">
-	<input type="hidden" name="searchcolumn" value="que_category">
-	<input type="hidden" name="searchword" id="searchword">
-		<ul class="q_category">
-			<li><a href="qna">전체</a></li>
-			<li value="배변">배변</li>
-			<li value="산책">산책</li>
-			<li value="공격성">공격성</li>
-			<li value="짖음">짖음</li>
-			<li value="기본예절">기본예절</li>
-			<li value="기타">기타</li>
-		</ul>
-		<button type="submit" id="btn" style="display: none;"></button>
-	</form>
-	</div>
-	<script type="text/javascript">
-	$("ul.q_category>li").click(function(){
-		var cate = $(this).attr("value");
-		//alert(cate);
-		$("#searchword").val(cate);
-		$("#btn").trigger("click");
-	})
-	
-	</script>
-
-	<div style="width:85%; margin-top:12%; ">
-	<p style="color:gray;">전체 글 ${count }개 &nbsp;&nbsp;&nbsp;
-		<button type="button" class="btn btn-light" onclick="location.href='form'">
-		<i class="bi bi-pencil-square"></i> 질문하기</button></p>
-		<c:forEach var="dto" items="${list}">
-		<div id="qlist" onclick="location.href='que_detail?que_num=${dto.que_num}'">
-			<div style="display:flex;flex-direction:column;cursor:pointer;padding:15px;">
-			<img src="${root }/image/question.png" style="width: 36px; height: 26px; margin-right: 13px; ">
-			<p style="font-weight:600; font-size:20px;letter-spacing:-0.2px;color:#393C47; margin-left:45px; margin-top: -24px;">
-			${dto.que_subject }</p>
-			<hr>
-			</div>
-			<p style="height:115px;font-size:17px;color:#333333;line-height:28px;overflow:hidden;
-			 padding: 0 15px 14px 15px; ">${dto.que_content}</p>
+	<div style="width:1000px; margin-left: 21%; margin-top:10px; border:1px solid #e0e0e0; padding: 75px 80px 80px 80px; border-radius: 12px;">
+	<img src="${root }/image/popular.png" style="width:23px;height:30px;margin-right:7px; float: left;">
+	<p style=" font-size:17px; font-weight:500; color:#999999; line-height: 30px;">분리불안 관련 최다 질문</p>	
+	<p style="font-size: 32px; font-weight: 600; line-height:35px; color:black; ">가족이 외출하면 짖고, 집에서 하루종일 따라다녀요</p>
+	<p style="font-size:17px;color:#999999;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word; margin-bottom: 0">
+	- 보호자님이 외출 시에 짖고 하울링이 있어요
+	- 다른 가족이 있어도 제가 나가면 낑낑대요
+	- 호텔링을 맡기면 스트레스만 받다 와요
+	- 집 안에서도 화장실이나 방 모든 곳을 따라다녀요
+	</p>
+	<br><hr><br>
+		<div style="margin-top:18px;margin-bottom:55px">
+			<h3 style="font-size:17px;letter-spacing:-0.1px;color:#999999;font-weight:500"><i class="bi bi-record-circle-fill"></i> 원인 분석</h3>
+			<p style="font-size:17px;color:#333333;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word">
+			반려견들이 무언가와 분리됐을 때 느끼는 불안한 마음을 분리불안 이라고 하는데요, 그 무언가가 사람일수도 있고, 동물일수도 있고, 물건일 수도 있습니다. 분리불안의 증세는 짖음, 파괴행동, 음식을 먹지않음, 아무것도 하지 않음 등 여러가지 행동으로 표현됩니다.
 			
-			<div style="width:469px;padding:32px 38px 32px 32px; background-color:#FAFAFC; margin-left: -30px; border-bottom-left-radius:7px;border-bottom-right-radius:7px; 
-			font-weight: 600; color: #393C47; margin-top: 30px;">
-			<c:if test="${dto.acount==0 }">
-			<img src="${root }/image/w2.jpeg" style=“width:24px;height:24px;border-radius:12px;margin-left:10px;margin-right:10px;” >
-			<span>답변 대기중</span></c:if>
-			<c:if test="${dto.acount>0 }">
-			<img src="${root }/image/w1.png" style=“width:24px;height:24px;border-radius:12px;margin-left:10px;margin-right:10px;” >
-			<span >훈련사 답변 완료 </span> </c:if>
-			</div>
+			분리불안은 보통 보호자님과 너무 많은 것을 하게 될수록 의지하는 성향이 강해져 분리불안이 발생하게 됩니다. 보호자와 함께 잠을 자고, 보호자 옆에서만 쉬고, 보호자와만 놀고 했을 때 분리불안이 쉽게 발생하게 됩니다. 혼자 남겨졌을 때 뿐만 아니라 집에 다른 보호자가 있는데도 특정 보호자가 사라지면 낑낑거린다면, 분리불안 증상이 있을 걸로 판단됩니다.
+			* 누구인지는 상관없이 사람or반려견 누구라도 있으면 괜찮다면 분리불안이 아닌 혼자 남겨진 것에 대한 두려움으로 조금 다른 방식의 교육이 필요합니다.
+			</p>
 		</div>
-		</c:forEach>
-	</div>
-  </div>
-  </div>
-  
-</div>
+		
+		<div style="margin-top:18px;">
+			
+			<h3 style="font-size:17px;letter-spacing:-0.1px;color:#999999;font-weight:500;marg8in-top: -1"><i class="bi bi-record-circle-fill"></i> 솔루션 제안</h3>
+			<p style="font-size:17px;color:#333333;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word">
+			분리불안 교육은 정말 오랜 시간 꾸준히 교육하셔야 하는 교육이고, 문제행동이 없어진다고 해서 그만두는 것이 아니라 반려견과 함께 사는 동안 꾸준하게 지켜야 할 교육입니다. 한 두가지 방법으로 개선되기 보다는 생활방식변경과 분리연습, 외출연습 등 여러가지면에서 교육이 이루어져야 합니다.
+			
+			<i class="bi bi-check-lg"></i>잠자리 분리하기
+			<i class="bi bi-check-lg"></i>제한급식하기
+			<i class="bi bi-check-lg"></i>하우스 훈련하기
+			<i class="bi bi-check-lg"></i>놀이방식 변경과 스킨십 줄이기
+			<i class="bi bi-check-lg"></i>외출연습하기
+			<i class="bi bi-check-lg"></i>평소에도 분리되는 연습하기
+			
+			1. 밀어내기와 하우스 교육
+			평소에도 보호자님만 따라다니고, 옆에서만 자고 쉴려고 한다면 보호자님이 사라졌을 때 당연히 불안해집니다. 그래서 평소에도 잠자리를 분리하고, 보호자님 옆에서 자꾸 쉬지 못하도록 밀어내 주시면서 동시에 반려견만의 자리를 만들어주고 그 자리에 가면 칭찬받고 간식도 먹을 수 있게 해주세요. 스스로 자기자리로 가서 쉬는 아주아주 건강한 행동이 나타것을 보게 되실거에요!
+			
+			2. 혼자서도 할 수 있는 놀이를 통해 자립심 심어주기
+			노즈워크 놀이를 하거나 보호자님께서 TV를 보거나 할 때에도 옆에서 지켜보거나 반려견을 무릎 위에 올려 두지 마시고, 은근슬쩍 떨어져 보세요. 보호자 옆에서만 놀이를 하는 것이 아닌, 혼자서도 활동하고 그에 대한 보상으로 간식도 획득하면서 자신감이 올라갈 수 있고, 보호자의 옆보다 자기자리로 갔을 때 더 편하게 쉴 수 있다는 기억을 심어주세요. 또한, 보호자님 외의 사람과 놀이를 하거나 간식을 먹는 등의 기억도 자주 심어주시면 좋습니다.
+			
+			3. 외출 연습하기
+			실제 외출 말고도 평소에도 외출연습을 통해 반려견의 흥분도를 낮춰주세요. 꼭 현관문이 아니라 방과 방사이도 좋습니다, 반려견을 두고 문을 통해 나가고 들어오는 연습을 하시는데 그 떨어져 있는 시간은 1초 7초 3초 10초 이렇게 랜덤하게 하시고, 짖지 않고 참을 수 있을 정도의 시간으로 연습하여야 합니다! (짖을 때 문을 열고 들어가면 안돼요) 들어가셔서도 문 열자마자 바로 칭찬하는 것이 아니라 아무렇지 않게 들어와야 합니다.
+			평소에 외출 후 집에 들어고 나갈 때에도 너무 반갑게 인사하지 말아주세요!
+			
+			분리불안 교육의 가장 중요한 부분은 보호자의 ‘인내심’ 입니다. 보호자가 온세상의 중심이었던 반려견에게 어느날 갑자기 독립하라고 하면 당연히 이해하지 못합니다. 모든 교육은 충분히 반려견이 이해하고 받아들이는게 확실했을 때 조금씩 단계를 넘어가야 합니다. 분리불안이 있던 기간이 길수록 더더욱 그렇습니다. 보호자가 포기하지 않는 한 꾸준한 교육에는 성과가 있기 마련입니다, 반려견과 행복한 반려 생활을 응원합니다!
+			</p>
+		</div>
+	</div> 
+</div>	
+	
 </body>
 </html>
+

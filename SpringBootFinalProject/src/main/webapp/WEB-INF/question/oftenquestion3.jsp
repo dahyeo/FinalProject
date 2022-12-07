@@ -14,191 +14,65 @@
 <script src="https://kit.fontawesome.com/4f8084f592.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 <c:set var="root" value="<%=request.getContextPath() %>"/>
-<style type="text/css">
-body *
-{
-	font-family: 'Spoqa Han Sans Neo';
-}
-
-div.whole{
-	width:100%;
-	height: 100%;
-	margin-top:25%;
-}
-
-div.search
-{
-	display:flex;
-	align-items:center;
-	padding-left:24px;
-	width:678px;
-	height:65px;
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	margin-top:28px; 
-	border-radius: 5px;
-}
-
-input.searchword
-{
-	width:100%;
-	 font-size:17px; 
-	 letter-spacing:-0.2px; 
-	 line-height:25px;
-	 border:none;
-	 color:#333333;
-	 pointer-events:auto
-}
-
-ul.oq_list, ul.q_category
-{
-list-style:  none;
-margin-left: -35px;
-margin-top: 20px;
-
-}
-ul.oq_list li
-{
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	border-radius: 10px;
-	width: 180px;
-	height: 60px;
-	float: left;
-	margin-right: 15px;
-	margin-bottom:10px;
-	text-align: center;
-	line-height: 60px;
-}
-ul.oq_list li a, ul.q_category li a
-{
-	text-decoration: none;
-	color:#555555;
-}
-
-ul.q_category li
-{
-	border:1px solid #DFE3EA;
-	box-shadow:0 0px 3px 3px rgba(0,0,0,0.03);
-	border-radius: 10px;
-	width: 85px;
-	height: 50px;
-	float: left;
-	margin-right: 10px;
-	margin-bottom:10px;
-	text-align: center;
-	line-height: 50px;
-	cursor: pointer;
-}
-#qlist
-{
-	width:470px;
-	height:370px;
-	background-color: white;
-	box-shadow: 0 0px 3px 3px rgba(0,0,0,0.07);
-	border-radius: 7px;
-	margin-bottom: 50px;
-	padding: 30px 30px 30px 30px;
-	float:left; 
-	margin-right: 40px;
-	cursor: pointer;
-}
-
-</style>
-
 <title>Insert title here</title>
 </head>
 <body>
-<div class="position-absolute top-0 start-50 translate-middle whole">
-<div>
-  <div style=" margin-left:15.5%;">
-	<div style="width: 85%;  margin-top: 12%;">
-		<div>
-			<h1 style="font-size:50px; font-weight: 600; color:#555555;">훈련사 Q&A</h1>
-			<p style="font-size:17px; color:#555555; margin-top: 24px;">우리 강아지, 고양이가 왜 그럴까요? 훈련사가 답변해드려요!</p>
+<div style="width: 1000px;height:1039px;"> 
+	<div style="width: 1000px; margin-top:5%; margin-left: 21%; margin-bottom: 15px;">
+	<b style="font-size: 24px; color:#555555;">자주 묻는 질문</b>
+	<a href="qna" style="font-size: 24px; color:gray; float:right; text-decoration: none;">목록으로 돌아가기 > </a><br>
+	</div>
+	
+	<div style="width: 1000px; margin-left: 21%;">
+	
+	</div>
+	
+	<div style="width:1000px; margin-left: 21%; margin-top:10px; border:1px solid #e0e0e0; padding: 75px 80px 80px 80px; border-radius: 12px;">
+	<img src="${root }/image/popular.png" style="width:23px;height:30px;margin-right:7px; float: left;">
+	<p style=" font-size:17px; font-weight:500; color:#999999; line-height: 30px;">배변 관련 최다 질문</p>	
+	<p style="font-size: 32px; font-weight: 600; line-height:35px; color:black; ">대소변을 못가리거나 마킹 문제가 있어요</p>
+	<p style="font-size:17px;color:#999999;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word; margin-bottom: 0">
+	- 대소변을 잘 못가려요
+	- 대변만 실수를 해요
+	- 배변을 움직이면서 봐요
+	- 실내에서 마킹을 해요
+	</p>
+	<br><hr><br>
+		<div style="margin-top:18px;margin-bottom:55px">
+			<h3 style="font-size:17px;letter-spacing:-0.1px;color:#999999;font-weight:500"><i class="bi bi-record-circle-fill"></i> 원인 분석</h3>
+			<p style="font-size:17px;color:#333333;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word">
+			먼저 반려견들의 배변은 단순한 배설활동이 아닌 감정표현의 수단이기도 합니다! 현재 환경에 어떤 문제가 있을 때 배변으로 그 감정으로 표현하기도 하게 됩니다. 혹시 배변 실수가 언제부터 있었는지 궁금하고, 마킹인지 소변인지도 확인하여야 합니다. 
+			크게 한두군데에만 본다면 마킹이 아니라 그냥 소변이라고 봐야 하고, 소변을 조금씩 이곳 저곳 여러군데에 손다면 마킹으로 봐야 합니다. 그리고 마킹은 특히 물건, 기둥, 모서리, 벽 등에 대고 하는 경우가 많습니다! 
+			단순한 배변실수라면 배변 환경 및 생활 공간에 대한 재인식이 필요하고, 마킹 문제라면 생활환경이나 패턴등을 전반적으로 재점검하여야 합니다!
+			</p>
 		</div>
-
-		<!-- 검색창 -->
-		<form action="qna" >
-		<div class="search">
-			<input type="hidden" name="searchcolumn" value="que_subject">
-			<input type="text" name="searchword" class="searchword" autocomplete="off" value="" placeholder="궁금한 키워드를 검색해보세요">
-			<img src="../image/search.png" style="width:30px; height:30px; margin-right:15px;" >
-		</div>
-		</form>
-	</div>
-	
-	<div style="width:85%; margin-top:12% ">
-		<h4>자주 묻는 질문</h4>
-		<ul class="oq_list">
-			<li><a href="oq1">산책을 무서워해요</a></li>
-			<li><a href="oq2">산책시 짖어요</a></li>
-			<li><a href="oq3">배변 실수를 해요</a></li>
-			<li><a href="oq4">식분증이 있어요</a></li>
-			<li><a href="oq5">입질이 있어요</a></li>
-			<li><a href="oq6">자꾸 깨물어요</a></li>
-			<li><a href="oq7">분리불안이 있어요</a></li>
-			<li><a href="oq8">사회성이 부족해요</a></li>
-		</ul>
-	</div>
-	
-	<div style="width:85%; margin-top:18% ">
-	<h4>질문 카테고리</h4>
-	<form action="qna">
-	<input type="hidden" name="searchcolumn" value="que_category">
-	<input type="hidden" name="searchword" id="searchword">
-		<ul class="q_category">
-			<li><a href="qna">전체</a></li>
-			<li value="배변">배변</li>
-			<li value="산책">산책</li>
-			<li value="공격성">공격성</li>
-			<li value="짖음">짖음</li>
-			<li value="기본예절">기본예절</li>
-			<li value="기타">기타</li>
-		</ul>
-		<button type="submit" id="btn" style="display: none;"></button>
-	</form>
-	</div>
-	<script type="text/javascript">
-	$("ul.q_category>li").click(function(){
-		var cate = $(this).attr("value");
-		//alert(cate);
-		$("#searchword").val(cate);
-		$("#btn").trigger("click");
-	})
-	
-	</script>
-
-	<div style="width:85%; margin-top:12%; ">
-	<p style="color:gray;">전체 글 ${count }개 &nbsp;&nbsp;&nbsp;
-		<button type="button" class="btn btn-light" onclick="location.href='form'">
-		<i class="bi bi-pencil-square"></i> 질문하기</button></p>
-		<c:forEach var="dto" items="${list}">
-		<div id="qlist" onclick="location.href='que_detail?que_num=${dto.que_num}'">
-			<div style="display:flex;flex-direction:column;cursor:pointer;padding:15px;">
-			<img src="${root }/image/question.png" style="width: 36px; height: 26px; margin-right: 13px; ">
-			<p style="font-weight:600; font-size:20px;letter-spacing:-0.2px;color:#393C47; margin-left:45px; margin-top: -24px;">
-			${dto.que_subject }</p>
-			<hr>
-			</div>
-			<p style="height:115px;font-size:17px;color:#333333;line-height:28px;overflow:hidden;
-			 padding: 0 15px 14px 15px; ">${dto.que_content}</p>
+		
+		<div style="margin-top:18px;">
 			
-			<div style="width:469px;padding:32px 38px 32px 32px; background-color:#FAFAFC; margin-left: -30px; border-bottom-left-radius:7px;border-bottom-right-radius:7px; 
-			font-weight: 600; color: #393C47; margin-top: 30px;">
-			<c:if test="${dto.acount==0 }">
-			<img src="${root }/image/w2.jpeg" style=“width:24px;height:24px;border-radius:12px;margin-left:10px;margin-right:10px;” >
-			<span>답변 대기중</span></c:if>
-			<c:if test="${dto.acount>0 }">
-			<img src="${root }/image/w1.png" style=“width:24px;height:24px;border-radius:12px;margin-left:10px;margin-right:10px;” >
-			<span >훈련사 답변 완료 </span> </c:if>
-			</div>
+			<h3 style="font-size:17px;letter-spacing:-0.1px;color:#999999;font-weight:500;marg8in-top: -1"><i class="bi bi-record-circle-fill"></i> 솔루션 제안</h3>
+			<p style="font-size:17px;color:#333333;line-height:28px;word-break:keep-all;white-space:pre-line;text-align:left;word-wrap:break-word">
+			반려견들은 자신들이 잠자고, 먹고, 놀고, 엎드려 쉬는 주 공간에서는 배변을 보지 않고, 주 공간으로부터 떨어진 곳에 배변을 하려고 하는 습성을 가지고 있습니다! 이런 습성을 이용하여 배변환경을 구성해 주세요.		
+		
+		<i class="bi bi-check-lg"></i>기본적인 배변 환경 체크 리스트
+		- 집과는 떨어진 구석쪽에 위치하는지
+		- 패드의 크기는 넉넉하게 (반려견 몸 크기의 3~4배)
+		- 패드는 항상 청결하게
+		- 패드가 절대로 미끌리지 않도록 패드 밑에 미끄럼방지매트를 깔아줄 것
+		- 다리를 들고 싸는 것을 좋아한다면 패드에 기둥을 세워주거나 벽쪽에 위치해 주기
+		- 다견 가정이라면 패드 장소는 1군데 더 만들어놔보기
+
+		이렇게 환경적으로 구성을 해두시고, 패드 외 장소에서 같이 엎드려 쉬고, 먹고, 놀이를 하는 등의 생활을 많이 할 수 있게 해주세요. 패드에 배변을 잘 봤을 때는 배변이 다 끝난 후에 칭찬과 함께 간식을 보상해 주세요! 그럼 자연스럽게 내가 주로 생활하는 주 생활공간이 생기게 되고, 주 공간에는 배변을 보지 않고 그 외 공간(패드)에 배변을 보게 되는 횟수가 늘어나게 됩니다
+
+		* 혹시 패드에서 엎드려 쉰다면, 패드에서 못쉬게 자꾸 불러내 주세요. ( 패드에서 엎드려 쉰다는 것은 패드가 배변장소가 아닌 주 공간의 개념이기 때문에 당연히 배변을 보려고 하지 않습니다.)
+
+		만약 마킹이라고 한다면, 마킹의 원인부터 찾아야 합니다.
+		반려견들은 자신의 주 생활공간에는 마킹을 하지 않습니다, 낯설거나 가족구성원이 바뀌거나 손님이 오는 등 어떤 환경변화가 생겼을 때 일시적으로 하거나 집 외의 공간에서 마킹을 하게 됩니다. 그래서 평소에 집 실내에다 마킹을 한다면 같이 사는 구성원과의 문제가 있거나 무언가 환경 적으로 큰 문제가 있다고 봐야합니다 :)
+		그리고 마킹을 하는 반려견에게는 짧고 잦은 산책을 통해 실외에서는 마킹을 주로하고 실내에서는 마킹을 하지 않는 습관을 만드는 데에도 도움이 됩니다! 특히나 배변교육은 혼냈을 때 그 부작용이 더 많기 때문에 절대로 혼내지 말아주세요!
+			</p>
 		</div>
-		</c:forEach>
-	</div>
-  </div>
-  </div>
-  
-</div>
+	</div> 
+</div>	
+	
 </body>
 </html>
+
