@@ -21,4 +21,7 @@ public interface TrainerProfileServiceInter {
 		 
     //번호에 따라 출력
     public List<TrainerprofileDto> getSList(String trainerprof_num);
+    
+  //트레이너번호에 따른 dto반환
+  	 public TrainerprofileDto getDataByTnum(String trainer_num);
 }

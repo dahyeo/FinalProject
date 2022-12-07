@@ -88,6 +88,7 @@ ul.q_category li
 	margin-bottom:10px;
 	text-align: center;
 	line-height: 50px;
+	cursor: pointer;
 }
 #qlist
 {
@@ -130,30 +131,44 @@ ul.q_category li
 	<div style="width:85%; margin-top:12% ">
 		<h4>자주 묻는 질문</h4>
 		<ul class="oq_list">
-			<li><a href="#">산책을 무서워해요</a></li>
-			<li><a href="#">산책시 짖어요</a></li>
-			<li><a href="#">배변 실수를 해요</a></li>
-			<li><a href="#">식분증이 있어요 </a></li>
-			<li><a href="#">입질이 있어요</a></li>
-			<li><a href="#">자꾸 깨물어요 </a></li>
-			<li><a href="#">분리불안이 있어요</a></li>
-			<li><a href="#">사회성이 부족해요</a></li>
+			<li><a href="oq1">산책을 무서워해요</a></li>
+			<li><a href="oq2">산책시 짖어요</a></li>
+			<li><a href="oq3">배변 실수를 해요</a></li>
+			<li><a href="oq4">식분증이 있어요</a></li>
+			<li><a href="oq5">입질이 있어요</a></li>
+			<li><a href="oq6">자꾸 깨물어요</a></li>
+			<li><a href="oq7">분리불안이 있어요</a></li>
+			<li><a href="oq8">사회성이 부족해요</a></li>
 		</ul>
 	</div>
 	
 	<div style="width:85%; margin-top:18% ">
 	<h4>질문 카테고리</h4>
+	<form action="qna">
+	<input type="hidden" name="searchcolumn" value="que_category">
+	<input type="hidden" name="searchword" id="searchword">
 		<ul class="q_category">
-			<li><a href="#">전체</a></li>
-			<li><a href="#">배변</a></li>
-			<li><a href="#">산책</a></li>
-			<li><a href="#">공격성</a></li>
-			<li><a href="#">짖음</a></li>
-			<li><a href="#">기본예절 </a></li>
-			<li><a href="#">기타</a></li>
+			<li><a href="qna">전체</a></li>
+			<li value="배변">배변</li>
+			<li value="산책">산책</li>
+			<li value="공격성">공격성</li>
+			<li value="짖음">짖음</li>
+			<li value="기본예절">기본예절</li>
+			<li value="기타">기타</li>
 		</ul>
+		<button type="submit" id="btn" style="display: none;"></button>
+	</form>
 	</div>
+	<script type="text/javascript">
+	$("ul.q_category>li").click(function(){
+		var cate = $(this).attr("value");
+		//alert(cate);
+		$("#searchword").val(cate);
+		$("#btn").trigger("click");
+	})
 	
+	</script>
+
 	<div style="width:85%; margin-top:12%; ">
 	<p style="color:gray;">전체 글 ${count }개 &nbsp;&nbsp;&nbsp;
 		<button type="button" class="btn btn-light" onclick="location.href='form'">
@@ -179,9 +194,7 @@ ul.q_category li
 			<span >훈련사 답변 완료 </span> </c:if>
 			</div>
 		</div>
-		
 		</c:forEach>
-			
 	</div>
   </div>
   </div>

@@ -35,4 +35,6 @@ public interface MemberMapperInter {
 	public void updatePetsitterStatus(String mem_num);
 	//mem_num에 따른 status값 반환
 	public int getStatus(String mem_num);
+	//mem_name을 통해 mem_num 반환받기
+	public String getMNumByMName(String mem_name);
 }

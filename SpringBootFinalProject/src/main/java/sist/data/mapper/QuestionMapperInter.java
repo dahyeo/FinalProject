@@ -14,4 +14,5 @@ public interface QuestionMapperInter {
 	public int getCountOfQuestion(Map<String, String> map);
 	public List<QuestionDto> getListOfQuestion(Map<String, String> map);
 	public QuestionDto getDataOfQuestionByNum(int que_num);
+	public String getNameByNum(int que_num);
 }

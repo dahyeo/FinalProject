@@ -40,4 +40,8 @@
   <select id="getStatus" resultType="int" parameterType="String">
     select status from member where mem_num=#{mem_num}
   </select>
+  <!-- membername을 통해 mem_num 반환받기 -->
+  <select id="getMNumByMName" parameterType="String" resultType="String">
+  	select mem_num from member where mem_name=#{mem_name}
+  </select>
 </mapper>

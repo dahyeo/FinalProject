@@ -97,6 +97,12 @@ public class MemberService implements MemberServiceInter {
 		return mapperInter.getStatus(mem_num);
 	}
 
+	@Override
+	public String getMNumByMName(String mem_name) {
+		// TODO Auto-generated method stub
+		return mapperInter.getMNumByMName(mem_name);
+	}
+
 	
 
 }

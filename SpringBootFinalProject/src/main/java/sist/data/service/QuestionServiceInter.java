@@ -10,6 +10,6 @@ public interface QuestionServiceInter {
 	public int getCountOfQuestion(String searchcolumn, String searchword);
 	public List<QuestionDto> getListOfQuestion(String searchcolumn, String searchword);
 	public QuestionDto getDataOfQuestionByNum(int que_num);
-
+	public String getNameByNum(int que_num);
 
 }

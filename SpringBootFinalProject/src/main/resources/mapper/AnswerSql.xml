@@ -12,7 +12,7 @@
 	<select id="getTrainer" resultType="answer" parameterType="int">
 		select trainer_name from answer where que_num=#{que_num}
 	</select>
-	<!-- 답변갯수 -->
+	<!-- 질문에 대한 답변갯수 -->
 	<select id="getCountOfAnswer" resultType="int" parameterType="int">
 		select count(*) from answer where que_num=#{que_num}
 	</select>
@@ -20,4 +20,9 @@
 	<select id="getAnswerByQueNum" parameterType="int" resultType="answer">
 		select * from answer where que_num=#{que_num}
 	</select>
+	<!-- 트레이너의 답변 갯수 -->
+	<select id="getCountOfAnswerByTNum" resultType="int" parameterType="String">
+		select count(*) from answer where trainer_num=#{trainer_num}
+	</select>
+	
 </mapper>

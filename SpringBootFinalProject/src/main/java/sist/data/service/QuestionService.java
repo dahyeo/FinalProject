@@ -54,5 +54,11 @@ public class QuestionService implements QuestionServiceInter {
 		return mapperInter.getDataOfQuestionByNum(que_num);
 	}
 
+	@Override
+	public String getNameByNum(int que_num) {
+		// TODO Auto-generated method stub
+		return mapperInter.getNameByNum(que_num);
+	}
+
 
 }
