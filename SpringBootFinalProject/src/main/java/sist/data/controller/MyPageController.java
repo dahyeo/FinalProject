@@ -6,14 +6,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import sist.data.dto.AnimalDto;
 import sist.data.dto.MemberDto;
+import sist.data.service.AnimalService;
 import sist.data.service.MemberService;
 
 @Controller
 public class MyPageController {
 
 	@Autowired
-	MemberService service;
+	MemberService mservice;
+	
+	@Autowired
+	AnimalService aservice;
 	
 	@GetMapping("/mypage/home")
 	public String home() {
@@ -25,7 +30,7 @@ public class MyPageController {
 		
 		ModelAndView mview=new ModelAndView();
 		
-		MemberDto dto=service.getDataById(mem_id);
+		MemberDto dto=mservice.getDataById(mem_id);
 		
 		mview.addObject("dto", dto);
 		
@@ -35,15 +40,21 @@ public class MyPageController {
 	}
 	
 	@GetMapping("mypage/petprofil")
-	public String petprofil() {
-		return "/mypage/petprofil";
+	public ModelAndView petprofil(String mem_num) {
+		ModelAndView mview=new ModelAndView();
+		
+		AnimalDto dto=aservice.getDataByMemNum(mem_num);
+		mview.addObject("dto", dto);
+		
+		mview.setViewName("/mypage/petprofil");
+		return mview;
 	}
 	
 	@GetMapping("mypage/hpupdateform")
 	public ModelAndView hpupdateform(String mem_id) {
 		ModelAndView mview=new ModelAndView();
 		
-		MemberDto dto=service.getDataById(mem_id);
+		MemberDto dto=mservice.getDataById(mem_id);
 		mview.addObject("dto", dto);
 		
 		mview.setViewName("/mypage/hpupdateform");
@@ -52,7 +63,7 @@ public class MyPageController {
 	
 	@PostMapping("mypage/hpupdate")
 	public String hpupdate(MemberDto dto) {
-		service.updateMember(dto);
+		mservice.updateMember(dto);
 		
 		return "redirect:home";
 	}
@@ -60,7 +71,7 @@ public class MyPageController {
 	public ModelAndView addrupdateform(String mem_id) {
 		ModelAndView mview=new ModelAndView();
 		
-		MemberDto dto=service.getDataById(mem_id);
+		MemberDto dto=mservice.getDataById(mem_id);
 		mview.addObject("dto", dto);
 		
 		mview.setViewName("/mypage/addrupdateform");
@@ -68,7 +79,7 @@ public class MyPageController {
 	}
 	@PostMapping("mypage/addrupdate")
 	public String addrupdate(MemberDto dto) {
-		service.updateMember(dto);
+		mservice.updateMember(dto);
 		
 		return "redirect:home";
 	}

@@ -20,7 +20,7 @@ button{
 </style>
 </head>
 <body>
-<%-- <c:if test="${mypet!=null }"> --%>
+<%-- <c:if test="${dto.ani_num == null }">
 <div align="center">
 	<div>
 		<h3><b>반려동물이 없습니다</b></h3>
@@ -30,7 +30,7 @@ button{
 	</div>
 	
 </div>
-<%-- </c:if> --%>
-
+</c:if> --%>
+${dto.mem_name}
 </body>
 </html>

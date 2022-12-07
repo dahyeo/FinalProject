@@ -54,7 +54,7 @@
 
 <c:if test="${sessionScope.loginok!=null }">
   <c:if test="${sessionScope.myid!='admin' }">
-  <span onclick="location.href='${root}/mypage'" class="mypage">
+  <span onclick="location.href='${root}/mypage/home'" class="mypage">
     <i class="fa fa-user" aria-hidden="true"></i>
   </span>
   </c:if>
