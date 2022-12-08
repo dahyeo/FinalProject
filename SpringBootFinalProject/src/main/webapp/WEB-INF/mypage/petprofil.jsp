@@ -20,17 +20,16 @@ button{
 </style>
 </head>
 <body>
-<%-- <c:if test="${dto.ani_num == null }">
-<div align="center">
-	<div>
-		<h3><b>반려동물이 없습니다</b></h3>
-		<h4>프로필을 등록하면 빠른 예약이 가능해요!</h4>
-		<br>
-		<button>등록하기</button>
+<c:if test="${dto.ani_num == null }">
+	<div align="center">
+		<div>
+			<h3><b>반려동물이 없습니다</b></h3>
+			<h4>프로필을 등록하면 빠른 예약이 가능해요!</h4>
+			<br>
+			<button>등록하기</button>
+		</div>
+		
 	</div>
-	
-</div>
-</c:if> --%>
-${dto.mem_name}
+</c:if>
 </body>
 </html>

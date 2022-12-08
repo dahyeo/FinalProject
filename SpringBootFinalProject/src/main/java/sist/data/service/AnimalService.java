@@ -23,6 +23,7 @@ public class AnimalService implements AnimalServiceInter {
 		// TODO Auto-generated method stub
 		return mapperInter.getDataByMemNum(mem_num);
 	}
+	
 
 
 }

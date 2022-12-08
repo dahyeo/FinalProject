@@ -44,7 +44,7 @@ hr {
 		<b>내 주소</b><br>
 		<b>${dto.mem_addr } </b><button class="btn btn-default addrbtn" onclick="location.href='addrupdateform?mem_id=${dto.mem_id}'">주소변경</button>
 		<hr>
-	
+		
 	</div>
 	
 
