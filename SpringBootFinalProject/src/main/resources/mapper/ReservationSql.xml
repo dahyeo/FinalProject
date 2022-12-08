@@ -20,4 +20,10 @@
   <select id="getAllDatas" resultType="reservation" parameterType="String">
     select * from reservation where mem_num=#{mem_num}
   </select>
+  <select id="getDataByPFNum" resultType="reservation" parameterType="String">
+    select * from reservation where partnerprof_num=#{partnerprof_num}
+  </select>
+  <select id="getDataByTFNum" resultType="reservation" parameterType="String">
+    select * from reservation where trainerprof_num=#{trainerprof_num}
+  </select>
 </mapper>

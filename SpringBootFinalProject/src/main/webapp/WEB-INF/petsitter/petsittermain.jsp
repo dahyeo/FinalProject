@@ -72,8 +72,8 @@ video {
     <p>펫시터가<br><br><br>집으로 와요</p>
     
     <div class="resbtn">
-      <span class="restext" onclick="location.href='petsitter/resform'">예약하기</span>
-    </div>
+      <span class="restext" onclick="location.href='partnerprofile/partnerlist'">예약하기</span>
+    </div> 
     
   </div>
 </div>

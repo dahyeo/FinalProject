@@ -49,4 +49,16 @@ public class ReservationService implements ReservationServiceInter {
 		// TODO Auto-generated method stub
 		return mapperInter.getAllDatas(mem_num);
 	}
+
+	@Override
+	public List<ReservationDto> getDataByPFNum(String partnerprof_num) {
+		// TODO Auto-generated method stub
+		return mapperInter.getDataByPFNum(partnerprof_num);
+	}
+
+	@Override
+	public List<ReservationDto> getDataByTFNum(String trainerprof_num) {
+		// TODO Auto-generated method stub
+		return mapperInter.getDataByTFNum(trainerprof_num);
+	}
 }

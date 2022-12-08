@@ -123,7 +123,7 @@ font-size: 25px;
 </head>
 <body>
 <img alt="" src="${root }/image/partner.png" width="700px;" height="300px;" id="img1">
-<button type="button" class="btn btn-primary btn2" onclick="location.href='/partnerService/form2'" style="width: 300px; height: 80px;">펫시터 지원하기</button>
+<button type="button" class="btn btn-primary btn2" onclick="location.href='/partnerService/form2'" style="width: 300px; height: 80px; background-color: #6789F5; border:#6789F5;">펫시터 지원하기</button>
 
 <div class="ques" style="border: none;">
 <b>펫시터 모집중</b><br><br>

@@ -24,11 +24,17 @@
 		<if test="searchcolumn!=null and searchword!=null">
 			where ${searchcolumn} like concat('%',#{searchword},'%')
 		</if>
-		order by que_num=#{que_num}
+		order by que_num=#{que_num} desc
 	</select>
 	
 	<!-- num에 따른 data 반환-->
 	<select id="getDataOfQuestionByNum" parameterType="int" resultType="question">
 		select * from question where que_num=#{que_num}
 	</select>
+	<!-- num에 따른 name 반환 -->
+	<select id="getNameByNum" parameterType="int" resultType="String">
+		select mem_name from question where que_num=#{que_num}
+	</select>
+
 </mapper>
+

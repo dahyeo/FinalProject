@@ -28,14 +28,8 @@
   position: absolute;
   right: 250px;
   top: 12px;
-}
-
-.mypage{
-  position: absolute;
-  right: 100px;
-  top: 12px;
   cursor: pointer;
-} 
+}
 </style>
 </head>
 <body>
@@ -46,24 +40,28 @@
 </c:if>
   
 <c:if test="${sessionScope.loginok!=null }">
-  <b class="loginname">${sessionScope.loginname }님</b>
-  <span onclick="location.href='${root}/login/logoutprocess'">
-    <i class="fa fa-sign-out" aria-hidden="true"> 로그아웃</i>
-  </span>
-</c:if> 
-
-<c:if test="${sessionScope.loginok!=null }">
+  
   <c:if test="${sessionScope.myid!='admin' }">
+
   <span onclick="location.href='${root}/mypage/home'" class="mypage">
     <i class="fa fa-user" aria-hidden="true"></i>
+
+  <span onclick="location.href='${root}/mypage'" class="mypage">
+    <b class="loginname">${sessionScope.loginname }님</b>
+
   </span>
   </c:if>
   
   <c:if test="${sessionScope.myid=='admin' }">
   <span onclick="location.href='${root}/member/applylist'" class="mypage">
-    <i class="fa fa-users" aria-hidden="true"></i>
+    <b class="loginname">${sessionScope.loginname }님</b>
   </span>
   </c:if>
-</c:if>
+  
+  <span onclick="location.href='${root}/login/logoutprocess'">
+    <i class="fa fa-sign-out" aria-hidden="true"> 로그아웃</i>
+  </span>
+</c:if> 
+
 </body>
 </html>

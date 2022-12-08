@@ -59,6 +59,26 @@ width: 270px;
 }
 
 body * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
+
+.resbtn{
+  display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 70px;
+    margin-top: 60px;
+    margin-left: 40px;
+    border-radius: 5px;
+    background: #6A92FE;
+}
+.restext{
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  font-size: 21px;
+  line-height: 48px;
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -74,7 +94,8 @@ body * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
 <b style="font-size: 30px;">${pdto.partnerprof_subject } </b><br><br>
  <span style="font-size: 22px;">
  ${pdto.partner_name }&nbsp;펫시터</span>&emsp;
- <i class="fa-solid fa-star" style="color: #6A92FE;"></i>
+<%--  <i class="fa-solid fa-star" style="color: #6A92FE;"></i>
+ ${pdto.partnerprof_star} --%>
  <br><br>
  <hr><br>
  
@@ -117,12 +138,15 @@ ${pdto.partner_exp }<br><br><br>
       <p class="card-text"><b>이용 요금</b></p>
       <hr id="hr2"><br>
       <p class="card-text">이용 가격 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+     
+        <span>
+          <fmt:formatNumber value="${pdto.partnerprof_price }" type="currency"></fmt:formatNumber>
+        </span>
+      </p>
       
-  
-<span>
-<fmt:formatNumber value="${pdto.partnerprof_price }" type="currency"></fmt:formatNumber>
-</span>
-</p>
+      <div class="resbtn">
+        <span class="restext" onclick="location.href='../petsitter/resform?partnerprof_num=${partnerprof_num}'">예약하기</span>
+      </div>
       
    </div>
   </div>

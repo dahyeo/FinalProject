@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
     <script src="https://kit.fontawesome.com/4f8084f592.js" crossorigin="anonymous"></script>
+    
 <title>Insert title here</title>
 <style type="text/css">
 
@@ -85,12 +86,12 @@ body * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
 &emsp;&emsp;&emsp;나와 우리 반려견에게 꼭 맞는 훈련사를 찾아보세요!
 </span>
 </div>
-<%--  <c:if test="${sessionScope.loginok!=null || sessionScope.myid=='admin' }">  --%> 
+<c:if test="${sessionScope.loginok!=null || sessionScope.myid=='admin' }"> 
 
-<button type="button" onclick="location.href='/trainerprofile/trainerform'" style="width: 200px; height: 50px;"
+<button type="button" onclick="location.href='/trainerprofile/trainerform'" style="width: 200px; height: 50px; background-color: #6789F5; border:#6789F5;"
    class="btn btn-primary btn1">훈련사 정보 등록</button>
-  
-<%--  </c:if>    --%>
+ </c:if> 
+
  
    </div>
  <div class="all" style="border: none;"><br><br>
@@ -117,7 +118,7 @@ body * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
 
 
 <span style="float: right;">
-      <a href="trainerdetail?trainerprof_num=${tdto.trainerprof_num}" class="btn btn-primary">훈련사 프로필 보기</a>  
+      <a href="trainerdetail?trainerprof_num=${tdto.trainerprof_num}" class="btn btn-primary" style=" background-color: #6789F5; border:#6789F5;">훈련사 프로필 보기</a>  
               </span>      </div>
   </div>
 

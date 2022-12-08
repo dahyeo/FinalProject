@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import sist.data.dto.ReservationDto;
 import sist.data.dto.ReviewDto;
 import sist.data.mapper.ReviewMapperInter;
 
@@ -31,5 +32,6 @@ public class ReviewService implements ReviewServiceInter {
 		// TODO Auto-generated method stub
 		return mapperInter.getData(rev_num);
 	}
+
 
 }

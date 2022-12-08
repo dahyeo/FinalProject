@@ -51,4 +51,12 @@ public class PartnerprofileService implements PartnerprofileServiceInter {
 	}
 
 
+
+	@Override
+	public PartnerprofileDto getDataByPNum(String partner_num) {
+		// TODO Auto-generated method stub
+		return mapperInter.getDataByPNum(partner_num);
+	}
+
+
 }

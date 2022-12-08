@@ -48,4 +48,11 @@ public class AnswerService implements AnswerServiceInter {
 		return mapperInter.getTrainer(que_num);
 	}
 
+
+	@Override
+	public int getCountOfAnswerByTNum(String trainer_num) {
+		// TODO Auto-generated method stub
+		return mapperInter.getCountOfAnswerByTNum(trainer_num);
+	}
+	
 }

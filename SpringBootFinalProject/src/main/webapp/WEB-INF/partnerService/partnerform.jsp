@@ -267,7 +267,7 @@ function btn(){
  
  
  </div>
- <button type="submit"  class="btn btn-primary" style="margin-left: 700px; width: 300px; height: 80px; font-size: 25px;"
+ <button type="submit"  class="btn btn-primary" style="margin-left: 700px; width: 300px; height: 80px; font-size: 25px; background-color: #6789F5; border:#6789F5;"
  onclick="btn()">지원서 제출</button>
  </form>
 <script type="text/javascript">

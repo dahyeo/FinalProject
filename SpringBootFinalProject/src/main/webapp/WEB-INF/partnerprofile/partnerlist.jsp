@@ -72,7 +72,7 @@ body * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
 </style>
 
 </head>
-<c:set var="root" value="<%=request.getContextPath() %>"/>
+
 <body>
 <div style="width: 100%; height: 300px; border: none; margin-bottom: 200px;">
 <div class="answer2" style="border: none;"><br><br>
@@ -87,15 +87,17 @@ body * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
 까다로운 펫시터 선발·관리 체계와 안전 시스템을 구축하였습니다.
 </span>
 </div>
-<button type="button" onclick="location.href='/partnerprofile/partnerform'" style="width: 200px; height: 50px;"
+<c:if test="${sessionScope.loginok!=null}">  
+<button type="button" onclick="location.href='/partnerprofile/partnerform'" style="width: 200px; height: 50px; background-color: #6789F5; border:#6789F5;"
    class="btn btn-primary btn1">펫시터 정보 등록</button>
+</c:if> 
 </div>
 
-<%--  <c:if test="${sessionScope.loginok!=null and sessionScope.myid=='admin' }">  
+
    
   
    
- </c:if>   --%>   
+  
  
    
  <div class="all" style="border: none;"><br><br>
@@ -118,7 +120,7 @@ ${pdto.partnerprof_subject }
 
 
 <span style="float: right;">
-      <a href="partnerdetail?partnerprof_num=${pdto.partnerprof_num}" class="btn btn-primary">펫시터 프로필 보기</a>  
+      <a href="partnerdetail?partnerprof_num=${pdto.partnerprof_num}" class="btn btn-primary" style=" background-color: #6789F5; border:#6789F5;">펫시터 프로필 보기</a>  
               </span>      </div>
   </div>
 

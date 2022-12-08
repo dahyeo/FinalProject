@@ -12,6 +12,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src="https://kit.fontawesome.com/4f8084f592.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+
 <title>Insert title here</title>
 <style type="text/css">
 div.all {
@@ -109,6 +111,26 @@ div.jiwon{
   width: 200px;
   height: 160px;
 }
+
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000px; /*100%*/
+  width: 1000px; /*100%*/
+  background-color: gray;
+}
+
+.modal-dialog{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 500px;  
+  height: 300px;
+}
 </style>
 <script type="text/javascript">
 
@@ -143,13 +165,15 @@ $(function(){
 </script>
 </head>
 <body>
-<form action="insert" method="post">
+<!-- <form action="insert" method="post"> -->
+<form action="" id="frm">
 
 <!-- 로그인한 id에 따른 mem_num, ani_num 숨기기 -->
 <input type="hidden" name="mem_num" value="${mem_num }">
 <input type="hidden" name="ani_num" value="${ani_num }">
 
 <!-- 추후 partner 프로필에서 '예약'누를것이므로 partnerprof_num도 hidden으로 넘기기 -->
+<input type="hidden" name="partnerprof_num" value="${partnerprof_num }">
 
   <div class="jiwon" style="border: none;">
   <b>방문돌봄 예약하기</b>
@@ -254,9 +278,130 @@ $(function(){
 		</fieldset>
 
  </div>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"
+   style="margin-left: 570px; width: 300px; height: 80px; font-size: 25px;">예약하기</button>
    
-   <button type="submit" class="btn btn-primary" style="margin-left: 570px; width: 300px; height: 80px; font-size: 25px;">예약하기</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" style="margin: 0 auto; font-size: 2em;">
+        <!-- 결제 버튼 -->
+        <button type="button" class="paybtn btn btn-warning"
+        style="margin-right: 30px;">카카오페이</button>
+        <button type="button" class="inicisbtn btn btn-danger">KG이니시스</button>
+      </div>
+      
+    </div>
+  </div>
+ </div>
+   
 </div> 
+
+<!-- 결제 스크립트 -->
+<script type="text/javascript">
+//카카오페이
+IMP.init('imp00408122');
+$(".paybtn").click(function(){
+	IMP.request_pay({
+		
+		pg: "kakaopay",
+		pay_method: "card",
+		merchant_uid: "iamport_sist2",
+		name: "WAYO",
+		amount: ${partnerprof_price},
+		buyer_name: "${mem_name}",
+		buyer_tel: "${mem_phone}"
+	}, function(rsp){
+		console.log(rsp);
+		
+		if(rsp.success){
+			
+			var msg="결제가 완료되었습니다.";
+			//msg+="\n고유ID : " + rsp.imp_uid;
+			//msg+="\n상점거래ID : " + rsp.merchant_uid; 
+			msg+="\n결제금액 : " + rsp.paid_amount + " 원";
+			
+			//insert restApi
+			$.ajax({
+				type:"post",
+				url:"insert",
+				data:$("#frm").serialize(),
+				dataType:"html",
+				success:function(){
+					
+					alert("예약이 완료되었습니다.");
+				}
+			});
+			
+			location.href="../mypage";
+			} else {
+			
+			var msg="결제에 실패하였습니다.";
+			msg+=rsp.error_msg;
+			
+			//실패시 reload
+			location.reload();
+			}
+		    alert(msg);
+	});	
+});
+
+//KG이니시스
+$(".inicisbtn").click(function(){
+	IMP.request_pay({
+		
+		pg: "html5_inicis",
+		pay_method: "card",
+		merchant_uid: "iamport_sist2",
+		name: "WAYO",
+		amount: ${partnerprof_price},
+		buyer_name: "${mem_name}",
+		buyer_tel: "${mem_phone}"
+	}, function(rsp){
+		console.log(rsp);
+		
+		if(rsp.success){
+			
+			var msg="결제가 완료되었습니다.";
+			//msg+="\n고유ID : " + rsp.imp_uid;
+			//msg+="\n상점거래ID : " + rsp.merchant_uid; 
+			msg+="\n결제금액 : " + rsp.paid_amount + " 원";
+			
+			//insert restApi
+			$.ajax({
+				type:"post",
+				url:"insert",
+				data:$("#frm").serialize(),
+				dataType:"html",
+				success:function(){
+					
+					alert("예약이 완료되었습니다.");
+				}
+			});
+			
+			location.href="../mypage";
+			} else {
+			
+			var msg="결제에 실패하였습니다.";
+			msg+=rsp.error_msg;
+			
+			//실패시 reload
+			location.reload();
+			}
+		    alert(msg);
+	});	
+});
+</script>
   
 </form>
 </body>

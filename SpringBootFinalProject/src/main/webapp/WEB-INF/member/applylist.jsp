@@ -95,39 +95,57 @@ function emailSend(){
   <!-- 1.각 status가 0이면 '승인 대기중',1(훈련사) or 2(펫시터)이면 '승인' 되도록 js 수정하기 -->
   <!-- 2.지금 너무 안예쁘므로, 추후 css 추가 -->
   
-  <!-- 훈련사 지원현황-->
-  <table class="table table-bordered" style="width: 800px; margin: 0 auto;">
-    <tr>
-      <td colspan="5" align="center">훈련사 지원현황</td>
-    </tr>
-    <c:forEach var="tdto" items="${tlist }" varStatus="i">
-      <tr>
-        <td>${i.count }
-          <input type="hidden" class="showstatus" mem_num="${tdto.mem_num }">
-        </td>
-        <td>${tdto.trainer_name }</td>
-        <td>${tdto.trainer_gender }</td>
-        <td>${tdto.trainer_email }</td>
-        <td><input type="button" class="confirmTrainer btn btn-warning" mem_num="${tdto.mem_num }" value="승인"></td>
-      </tr>
-    </c:forEach>
-  </table>
+  <div style="padding-top: 85px; width: 1000px; margin: 0px auto; padding-bottom: 30px;">
+	<h1 style="font-size: 50px; font-weight: 600; color: #555555">파트너 지원현황</h1>
+	<p style="font-size: 17px; color: #333333; margin-top: 26px">"승인" 시 파트너에게 승인 이메일이 발송됩니다.</p>
+  </div>
   
-  <!-- 펫시터 지원현황 -->
-  <table class="table table-bordered" style="width: 800px; margin: 0 auto;">
-    <tr>
-      <td colspan="5" align="center">펫시터 지원현황</td>
-    </tr>
-    <c:forEach var="pdto" items="${plist }" varStatus="i">
-      <tr>
-        <td>${i.count }</td>
-        <td>${pdto.partner_name }</td>
-        <td>${pdto.partner_gender }</td>
-        <td>${pdto.partner_email }</td>
-        <td><input type="button" class="confirmPetsitter btn btn-warning" mem_num="${pdto.mem_num }" email="${pdto.partner_email }" value="승인"></button></td>
-      </tr>
-    </c:forEach>
-  </table>
+  <div class="container mt-3" style="margin-left: 200px;">
+  <!-- Nav pills -->
+  <ul class="nav nav-pills" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="pill" href="#home">훈련사 지원현황</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#menu1">펫시터 지원현황</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <table class="table table-bordered" style="width: 700px;">
+        <c:forEach var="tdto" items="${tlist }" varStatus="i">
+          <tr>
+            <td style="width: 30px;">${i.count }
+              <input type="hidden" class="showstatus" mem_num="${tdto.mem_num }">
+            </td>
+            <td style="text-align: center;">${tdto.trainer_name }</td>
+            <td style="text-align: center;">${tdto.trainer_gender }</td>
+            <td style="width: 50px;">
+              <input type="button" class="confirmTrainer btn btn-warning" mem_num="${tdto.mem_num }" value="승인">
+            </td>
+          </tr>
+        </c:forEach>
+      </table>
+    </div>
+    
+    <div id="menu1" class="container tab-pane fade"><br>
+      <table class="table table-bordered" style="width: 700px;">
+        <c:forEach var="pdto" items="${plist }" varStatus="i">
+          <tr>
+            <td style="width: 30px;">${i.count }</td>
+            <td style="text-align: center;">${pdto.partner_name }</td>
+            <td style="text-align: center;">${pdto.partner_gender }</td>
+            <td style="width: 50px;">
+              <input type="button" class="confirmPetsitter btn btn-warning" mem_num="${pdto.mem_num }" email="${pdto.partner_email }" value="승인"></button>
+            </td>
+          </tr>
+        </c:forEach>
+      </table>
+    </div>
+  </div>
+</div>
   
 </c:if> 
 </body>

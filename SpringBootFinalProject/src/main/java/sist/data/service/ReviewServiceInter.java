@@ -2,6 +2,7 @@ package sist.data.service;
 
 import java.util.List;
 
+import sist.data.dto.ReservationDto;
 import sist.data.dto.ReviewDto;
 
 public interface ReviewServiceInter {

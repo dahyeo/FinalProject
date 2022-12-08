@@ -92,7 +92,7 @@ body * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
 
 </head>
 <body>
-<button type="button" class="btn btn-primary btn1" onclick="location.href='trainerform'" style="width: 300px; height: 80px;">훈련사 지원하기</button>
+<button type="button" class="btn btn-primary btn1" onclick="location.href='trainerform'" style="width: 300px; height: 80px; background-color: #6789F5; border:#6789F5;">훈련사 지원하기</button>
 
 <img alt="" src="${root }/image/list1.png" width="700px;" height="300px;" id="img1">
 </body>

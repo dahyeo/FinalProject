@@ -17,4 +17,5 @@ public interface MemberServiceInter {
 	public void updateTrainerStatus(String mem_num);
 	public void updatePetsitterStatus(String mem_num);
 	public int getStatus(String mem_num);
+	public String getMNumByMName(String mem_name);
 }

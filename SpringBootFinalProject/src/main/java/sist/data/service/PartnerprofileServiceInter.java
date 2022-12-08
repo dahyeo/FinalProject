@@ -22,4 +22,6 @@ public interface PartnerprofileServiceInter {
 	 //번호에 따라 출력
 	 public List<PartnerprofileDto> getSList(String partnerprof_num);
 
+	//partner_num에 따른 정보
+	 public PartnerprofileDto getDataByPNum(String partner_num);
 }

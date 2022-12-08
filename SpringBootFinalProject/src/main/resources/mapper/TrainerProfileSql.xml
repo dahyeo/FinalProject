@@ -25,7 +25,9 @@ select * from trainerprofile
 select * from trainerprofile where trainerprof_num=#{trainerprof_num}
 </select>
 
- 
+ <select id="getDataByTNum" parameterType="String" resultType="trainerprofile">
+    select * from trainerprofile where trainer_num=#{trainer_num}
+ </select>
 
 
 </mapper> 

@@ -17,4 +17,8 @@ public interface ReservationMapperInter {
 	public ReservationDto getDataByMNum(String mem_num);
 	//mem_num에 따른 리스트 전체 출력(내가 예약한 현황 출력)
 	public List<ReservationDto> getAllDatas(String mem_num);
+	//partnerprof_num에 따른 데이터
+	public List<ReservationDto> getDataByPFNum(String partnerprof_num);
+	//trainerprof_num에 따른 데이터
+	public List<ReservationDto> getDataByTFNum(String trainerprof_num);
 }

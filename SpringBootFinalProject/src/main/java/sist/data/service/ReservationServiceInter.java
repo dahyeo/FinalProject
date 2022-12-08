@@ -12,4 +12,8 @@ public interface ReservationServiceInter {
 	public void updateReservation(ReservationDto dto);
 	public ReservationDto getDataByMNum(String mem_num);
 	public List<ReservationDto> getAllDatas(String mem_num);
+	//partnerprof_num에 따른 데이터
+	public List<ReservationDto> getDataByPFNum(String partnerprof_num);
+	//trainerprof_num에 따른 데이터
+	public List<ReservationDto> getDataByTFNum(String trainerprof_num);
 }

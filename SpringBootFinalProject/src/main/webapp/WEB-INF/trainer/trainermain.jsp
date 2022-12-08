@@ -72,7 +72,7 @@ video {
     <p>훈련사의<br><br><br>체계적 교육!</p>
     
     <div class="resbtn">
-      <span class="restext" onclick="location.href='trainer/resform'">예약하기</span>
+      <span class="restext" onclick="location.href='trainerprofile/trainerlist'">예약하기</span>
     </div>
     
   </div>

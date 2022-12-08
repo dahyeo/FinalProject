@@ -74,6 +74,26 @@ vertical-align: bottom;
 
 
 body * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
+
+.resbtn{
+  display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 70px;
+    margin-top: 60px;
+    margin-left: 40px;
+    border-radius: 5px;
+    background: #6A92FE;
+}
+.restext{
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  font-size: 21px;
+  line-height: 48px;
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -92,7 +112,8 @@ body * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
 
  <span style="font-size: 22px;">
  ${tdto.trainer_name }&nbsp;훈련사</span>&emsp;
- <i class="fa-solid fa-star" style="color: #6A92FE;"></i>
+ <%-- <i class="fa-solid fa-star" style="color: #6A92FE;"></i>
+${tdto.trainerprof_star } --%>
  <br><br>
 
  <hr id="hr3"><br>
@@ -136,6 +157,10 @@ ${tdto.trainer_career }<br><br><br>
 <fmt:formatNumber value="${tdto.trainerprof_price }" type="currency"></fmt:formatNumber>
 </span>
 </p>
+
+<div class="resbtn">
+      <span class="restext" onclick="location.href='../trainer/resform?trainerprof_num=${trainerprof_num}'">예약하기</span>
+    </div>
       
    </div>
   </div>
@@ -152,7 +177,7 @@ ${tdto.trainer_career }<br><br><br>
       <p class="card-text"><b>궁금한 내용이 있다면,<br> 훈련사님에게 문의해주세요!</b></p>
       <hr id="hr2"><br>
       
- <button type="button" onclick="location.href='/trainer/qna'" style="width: 270px; height: 50px;"
+ <button type="button" onclick="location.href='/trainer/qna'" style="width: 270px; height: 50px; background-color: #6789F5; border:#6789F5;"
    class="btn btn-primary btn1">문의하기</button>
 </div>
 </div>  

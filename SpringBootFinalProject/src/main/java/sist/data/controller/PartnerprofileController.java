@@ -101,7 +101,8 @@ public class PartnerprofileController {
 	{
 		ModelAndView model=new ModelAndView();
 		
-		
+		//partnerprof_num 넘기기_dh1207
+		model.addObject("partnerprof_num", partnerprof_num);
 		
 		//num에 해당하는 dto
 	

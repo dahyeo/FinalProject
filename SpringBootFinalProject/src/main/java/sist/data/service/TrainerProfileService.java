@@ -39,6 +39,12 @@ public class TrainerProfileService implements TrainerProfileServiceInter {
 		return mapperInter.getSList(trainerprof_num);
 	}
 
+	@Override
+	public TrainerprofileDto getDataByTNum(String trainer_num) {
+		// TODO Auto-generated method stub
+		return mapperInter.getDataByTNum(trainer_num);
+	}
+
 
 
 

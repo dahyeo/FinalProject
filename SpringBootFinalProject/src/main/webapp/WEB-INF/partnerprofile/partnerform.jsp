@@ -155,7 +155,7 @@ div.jiwon{
 	</fieldset>	
 	</div> <br>
  </div>  <br>
- <button type="submit" class="btn btn-primary" style="margin-left: 700px; width: 300px; height: 80px; font-size: 25px;"
+ <button type="submit" class="btn btn-primary" style="margin-left: 700px; width: 300px; height: 80px; font-size: 25px; background-color: #6789F5; border:#6789F5;"
  onclick="btn()">펫시터 프로필 등록</button>
  </form>
  <script type="text/javascript">

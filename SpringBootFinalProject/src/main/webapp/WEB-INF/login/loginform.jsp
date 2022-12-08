@@ -264,7 +264,7 @@ function check(){
     
     <form class="email-signup">
       <div class="social-login">
-      <a href="../member/normal">
+      <a href="../member/normal" style="height: 63px; vertical-align: middle;">
         일반회원
       </a>
       <a href="../member/partner">

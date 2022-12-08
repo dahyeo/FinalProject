@@ -107,7 +107,7 @@ public class TrainerProfileController {
 		
 		List<TrainerprofileDto> tlist=service.getSList(trainerprof_num);
 		model.addObject("tlist", tlist);
-		
+		model.addObject("trainerprof_num", trainerprof_num);
 		model.addObject("tdto",tdto);
 		model.setViewName("/trainerprofile/trainerdetail");
 		
